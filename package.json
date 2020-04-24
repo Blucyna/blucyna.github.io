@@ -1,0 +1,13 @@
+{
+  "name": "BlucyPortfolio",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "gh-pages": "^2.1.1"
+  },
+  "scripts": {
+    "build": "rm -rf build && mkdir build && cp -r src/public build && node src/builder.js",
+    "deploy": "gh-pages -d build"
+  },
+  "homepage": "https://blucyna.github.io/portfolio"
+}
