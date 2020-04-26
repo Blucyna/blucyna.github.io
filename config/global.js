@@ -1,5 +1,5 @@
 module.exports = {
-  url: 'https://blucy.pl',
+  url: 'https://blucyna.github.io',
   avatar: 'img/avatar.png',
   name: 'Lucyna Bugara',
   subtitle: 'UX / UI designer',
