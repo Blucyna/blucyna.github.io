@@ -1,0 +1,72 @@
+{% extends "../common/layout.html" %}
+
+{% block additionalStyles %}
+    <style>
+        .profile-page.profile_theme_default .profile-info,
+        .profile-page.profile_theme_default .projects-list .project .project-name .project-title,
+        .profile-page.profile_theme_default .projects-list .project .project-name .project-subtitle,
+        .ufo--about-page {
+            --h1Size: 17px;
+            --h1Height: 19px;
+            --h2Size: 16px;
+            --h2Height: 19px;
+            --p1Size: 16px;
+            --p1Height: 19px;
+            --projectTitleSize: 18px;
+            --projectTitleHeight: 22px;
+            --projectSubTitleSize: 16px;
+            --projectSubTitleHeight: 19px;
+            --buttonSize: 16px;
+            --buttonHeight: 19px;
+        }
+
+        @media (min-width: 768px) {
+            .profile-page.profile_theme_default .profile-info,
+            .profile-page.profile_theme_default .projects-list .project .project-name .project-title,
+            .profile-page.profile_theme_default .projects-list .project .project-name .project-subtitle,
+            .ufo--about-page {
+                --h1Size: 24px;
+                --h1Height: 27px;
+                --h2Size: 14px;
+                --h2Height: 21px;
+                --p1Size: 16px;
+                --p1Height: 23px;
+                --projectTitleSize: 26px;
+                --projectTitleHeight: 31px;
+                --projectSubTitleSize: 16px;
+                --projectSubTitleHeight: 19px;
+                --buttonSize: 12px;
+                --buttonHeight: 15px;
+            }
+        }
+    </style>
+{% endblock %}
+
+{% block navigation %}
+    <div class="profile-view-nav">
+        <a href="/" class="nav-item active">Work</a>
+        <div class="nav-item">Contact</div>
+        <a href="{{config.cvFile}}" target="_blank" rel="nofollow noopener" class="nav-item">Resume</a>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="ufo--about-page ufo--about-page-default-template">
+        <div class="ufo--about-content ufo--contact-page">
+            <div class="user-contact-form">
+                <form name="contact_form">
+                    <div class="title">Dear {{config.name}},</div>
+                    <input type="hidden" name="toEmail" value="{{config.contact.email}}">
+                    <textarea name="message" type="text" required="" placeholder="Write your message here.."></textarea>
+                    <div class="subtitle">Best,</div>
+                    <div class="sender">
+                        <input class="s-name" name="senderName" type="text" required="" placeholder="Your name">
+                        <input class="s-mail" name="senderEmail" type="text" required="" placeholder="Your email">
+                    </div>
+                    <button type="submit">Send email</button>
+                    <div class="um">or find me at <a href="mailto:{{config.contact.email}}">{{config.contact.email}}</a></div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,15 +1,19 @@
 module.exports = {
-  avatar: '',
-  name: '',
-  description: '',
+  avatar: 'img/avatar.png',
+  name: 'Lucyna Bugara',
+  subtitle: 'UX / UI designer',
+  description: 'i am bla bla bla',
   socials: [
-    {icon: '', name: '', adress: ''},
+    {icon: 'fa-facebook', name: 'facebook', address: 'https://facebook.com'},
+    {icon: 'fa-behance', name: 'behance', address: 'https://behance.com'},
+    {icon: 'fa-dribbble', name: 'dribbble', address: 'https://dribbble.com'},
+    {icon: 'fa-linkedin', name: 'linkedin', address: 'https://linkedin.com/'},
   ],
   meta: {
-    title: '',
+    title: 'blucy.pl - Lucyna Bugara portfolio',
   },
   contact: {
-    email: '',
+    email: 'lucyna.bugara@gmail.com',
   },
-  cvFile: '',
+  cvFile: 'cv.pdf',
 };

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "gh-pages": "^2.1.1"
+    "gh-pages": "^2.1.1",
+    "nunjucks": "^3.2.1"
   },
   "scripts": {
     "build": "rm -rf build && mkdir build && cp -r src/public build && node src/builder.js",
