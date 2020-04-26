@@ -41,7 +41,7 @@ const viewData = {
   cacheBuster: new Date().getTime(),
 };
 
-const getOgTags = (title=globalConfig.meta.title, url=globalConfig.url, description=globalConfig.description) => ({
+const getOgTags = (title=globalConfig.meta.title, url= globalConfig.url, description= globalConfig.description) => ({
   og: {
     title,
     url,

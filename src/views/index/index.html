@@ -3,8 +3,8 @@
 {% block navigation %}
     <div class="profile-view-nav">
         <div class="nav-item active">Work</div>
-        <a href="{{config.cvFile}}" target="_blank" rel="nofollow noopener" class="nav-item">Resume</a>
-        <a href="mailto:{{config.contact.email}}" class="nav-item">Contact</a>
+        <a href="{{config.cvFile}}" target="_blank" rel="nofollow noopener" id="nav-cv-button" class="nav-item">Resume</a>
+        <a href="mailto:{{config.contact.email}}" id="nav-contact-button" class="nav-item">Contact</a>
     </div>
 {% endblock %}
 
