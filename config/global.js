@@ -1,4 +1,5 @@
 module.exports = {
+  url: 'https://blucy.pl',
   avatar: 'img/avatar.png',
   name: 'Lucyna Bugara',
   subtitle: 'UX / UI designer',
@@ -10,7 +11,9 @@ module.exports = {
     {icon: 'fa-linkedin', name: 'linkedin', address: 'https://linkedin.com/'},
   ],
   meta: {
-    title: 'blucy.pl - Lucyna Bugara portfolio',
+    title: 'blucy.pl - Lucyna Bugara UX / UI designer',
+    keywords: 'portfolio, ux, ui, webdesign, design, graphic',
+    description: 'Lucyna Bugara - UX / UI designer, need a design? contact me'
   },
   contact: {
     email: 'lucyna.bugara@gmail.com',

@@ -37,18 +37,32 @@ const viewData = {
   entries,
 };
 
+const getOgTags = (title=globalConfig.meta.title, url=globalConfig.url, description=globalConfig.description) => ({
+  og: {
+    title,
+    url,
+    description
+  }
+});
+
 nunjucks.configure('src/views', { autoescape: true });
 
-const index = generatePage('index/index.html', viewData);
+const index = generatePage('index/index.html', {...viewData, ...getOgTags()});
 const details = new Map(
   entries.map(
     (entry) => [
       entry,
-      //generatePage('detail/detail.html', {viewData, entry}),
+      /*generatePage('detail/detail.html', {
+        ...viewData,
+        ...getOgTags(entry.name, `${globalConfig.url}/${entry.path}`, entry.description),
+        entry,
+      }),*/
     ]
   )
 );
-const contact = generatePage('contact/contact.html', viewData);
+
+//const contact = generatePage('contact/contact.html', viewData);
 
 saveToFile('index.html', index);
-saveToFile('contact.html', contact);
+//details.map(([entry, content]) => saveToFile(entry.path, content));
+//saveToFile('contact.html', contact);
