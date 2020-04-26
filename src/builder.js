@@ -38,6 +38,7 @@ const saveToFile = (view, content) => {
 const viewData = {
   config: globalConfig,
   entries,
+  cacheBuster: new Date().getTime(),
 };
 
 const getOgTags = (title=globalConfig.meta.title, url=globalConfig.url, description=globalConfig.description) => ({
