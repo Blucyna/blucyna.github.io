@@ -12,15 +12,17 @@
     <div class="ufo--user-projects">
         <div class="projects-list">
             {% for item in entries %}
-                <div class="project title-is--visible title-is--below title-is--dark thumbnail-is--small thumbnail-is--small-under title-align-- title-justify--center">
-                    <div class="project-name">
-                        <div class="project-title">{{item.name}}</div>
-                        <div class="project-subtitle">{{item.subtitle}}</div>
+                <a href="{{item.path}}" title="{{item.name}}">
+                    <div class="project title-is--visible title-is--below title-is--dark thumbnail-is--small thumbnail-is--small-under title-align-- title-justify--center">
+                        <div class="project-name">
+                            <div class="project-title">{{item.name}}</div>
+                            <div class="project-subtitle">{{item.subtitle}}</div>
+                        </div>
+                        <div class="image-container">
+                            <img src="{{item.miniCover}}" alt="{{item.name}}">
+                        </div>
                     </div>
-                    <div class="image-container">
-                        <img src="{{item.miniCover}}" alt="{{item.name}}">
-                    </div>
-                </div>
+                </a>
             {% endfor %}
         </div>
     </div>
