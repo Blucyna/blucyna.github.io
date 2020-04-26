@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "rm -rf build && mkdir build && cp -r src/public build && node src/builder.js",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build -b master"
   },
   "homepage": "https://blucyna.github.io/portfolio"
 }
