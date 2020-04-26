@@ -1,4 +1,6 @@
 - gtm
 - GA
 - FB pixel
-- HotJar
+
+- fb share check
+- lighthouse
