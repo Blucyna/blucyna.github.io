@@ -36,6 +36,26 @@
 	
 	
 	}
+	@keyframes fadein {
+	
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	
+	}
+	@keyframes fadein {
+	
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	
+	}
 	#NEW_IN_STORE {
 		transform: matrix(1,0,0,1,-7.5,351.5) rotate(-90deg);
 		transform-origin: center;
@@ -379,10 +399,10 @@
 		left: 380px;
 		top: 17px;
 		overflow: visible;
+		cursor: pointer;
 		--web-animation: fadein 0.3s ease-out;
 		--web-action-type: page;
 		--web-action-target: iPhone_X_XS_11_Pro___Dashboard_burger_menu.html;
-		cursor: pointer;
 	}
 	.Menu_bm {
 		overflow: visible;
@@ -400,10 +420,10 @@
 		height: 16px;
 		left: 0px;
 		top: 0px;
+		cursor: pointer;
 		--web-animation: fadein 0.3s ease-out;
 		--web-action-type: page;
 		--web-action-target: iPhone_X_XS_11_Pro___Dashboard_burger_menu.html;
-		cursor: pointer;
 	}
 	#Dashboard {
 		position: absolute;
@@ -3205,13 +3225,13 @@ window.application = new Application();
 						</path>
 					</svg>
 				</div>
-				<div onclick="application.goToTargetView(event)" id="Menu">
+				<div onclick="application.showOverlay('iPhone_X_XS_11_Pro___Dashboard_burger_menu',0,0, event)" id="Menu">
 					<svg class="Menu_bm" viewBox="-6160 0 16 14">
 						<path fill="rgba(255,255,255,1)" id="Menu_bm" d="M -6160.00048828125 14.0001802444458 L -6160.00048828125 11.99971294403076 L -6149.99951171875 11.99971294403076 L -6149.99951171875 14.0001802444458 L -6160.00048828125 14.0001802444458 Z M -6160.00048828125 8.000324249267578 L -6160.00048828125 5.999856472015381 L -6144 5.999856472015381 L -6144 8.000324249267578 L -6160.00048828125 8.000324249267578 Z M -6160.00048828125 2.000467538833618 L -6160.00048828125 0 L -6144 0 L -6144 2.000467538833618 L -6160.00048828125 2.000467538833618 Z">
 						</path>
 					</svg>
 					<svg class="Rectangle_1446">
-						<rect fill="transparent" onclick="application.goToTargetView(event)" id="Rectangle_1446" rx="0" ry="0" x="0" y="0" width="16" height="16">
+						<rect fill="transparent" onclick="application.showOverlay('iPhone_X_XS_11_Pro___Dashboard_burger_menu',0,0, event)" id="Rectangle_1446" rx="0" ry="0" x="0" y="0" width="16" height="16">
 						</rect>
 					</svg>
 				</div>

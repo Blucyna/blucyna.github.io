@@ -11,6 +11,7 @@
 		--web-view-id: iPhone_X_XS_11_Pro___Dashboard_burger_menu;
 		--web-scale-on-resize: true;
 		--web-enable-deep-linking: true;
+		--web-is-overlay: true;
 	}
 	:root {
 		--web-view-ids: iPhone_X_XS_11_Pro___Dashboard_burger_menu;
@@ -26,10 +27,12 @@
 		width: 414px;
 		height: 943px;
 		overflow: hidden;
+		cursor: pointer;
 		--web-view-name: iPhone X/XS/11 Pro – Dashboard burger menu;
 		--web-view-id: iPhone_X_XS_11_Pro___Dashboard_burger_menu;
 		--web-scale-on-resize: true;
 		--web-enable-deep-linking: true;
+		--web-is-overlay: true;
 	}
 	@keyframes  {
 	
@@ -2633,7 +2636,7 @@ window.application = new Application();
 </script>
 </head>
 <body>
-<div id="iPhone_X_XS_11_Pro___Dashboard_burger_menu">
+<div id="iPhone_X_XS_11_Pro___Dashboard_burger_menu" onclick="application.goBack()">
 	<svg class="Rectangle_1451">
 		<rect fill="rgba(0,0,0,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" onclick="application.goBack()" id="Rectangle_1451" rx="0" ry="0" x="0" y="0" width="414" height="943">
 		</rect>
