@@ -31,7 +31,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|PT+Serif:400,700" rel="stylesheet">
 
-    <link rel="stylesheet" href="public/css/styles.css?cache=1587941936255">
+    <link rel="stylesheet" href="public/css/styles.css?cache=1587945616456">
 
     
         <title>blucy.pl - Lucyna Bugara UX / UI designer</title>
@@ -66,6 +66,12 @@
                    src="https://www.facebook.com/tr?id=226201375371569&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Facebook Pixel Code -->
+
+    <script>
+        window.siteConfig = {
+          path: "https://blucy.pl/third.html",
+        }
+    </script>
 
     <style>
         .profile-page.profile_theme_default .profile-info,
@@ -276,7 +282,6 @@
 
             </section>
             <section class="ufo--case-study-section p_section p_section--text text" style=" ">
-
                 <div class="ufo--p-container-fluid">
                     <div class="text-container">
                         <div class="text">
@@ -294,7 +299,7 @@
             </section>
 
             <div class="live-preview-button-container">
-                <a href="" class="live-preview-btn">Live preview</a>
+                <a href="" id="live-preview-btn" target="_blank" class="live-preview-btn">Live preview</a>
             </div>
 
             <section class="ufo--case-study-section p_section p_section--text text" style=" ">
@@ -322,7 +327,7 @@
                             <div class="owner-company">UX / UI designer</div>
                         </div>
                         <div class="footer-links">
-                            <a href="mailto:lucyna.bugara@gmail.com" class="footer-btn">Contact</a>
+                            <a href="mailto:lucyna.bugara@gmail.com" id="footer-contact-button" class="footer-btn">Contact</a>
                         </div>
                     </div>
                     <div class="footer-share-links">
@@ -388,5 +393,89 @@
       document.addEventListener('scroll', scrollDistance);
     </script>
 
+
+    <script>
+      (function() {
+        var previewButton = document.getElementById('live-preview-btn');
+
+        previewButton && previewButton.addEventListener('click', function() {
+          fbq('trackCustom', 'ClickPreview', {path: window.siteConfig.path});
+        });
+
+        var footerContactButton = document.getElementById('footer-contact-button');
+
+        footerContactButton && footerContactButton.addEventListener('click', function() {
+            fbq('trackCustom', 'ClickContact', {path: window.siteConfig.path, type: 'footer'});
+            fbq('track', 'Lead');
+        });
+
+        var navContactButton = document.getElementById('nav-contact-button');
+
+        navContactButton && navContactButton.addEventListener('click', function() {
+            fbq('trackCustom', 'ClickContact', {path: window.siteConfig.path, type: 'navigation'});
+            fbq('track', 'Lead');
+        });
+
+        var cvDownloadButton = document.getElementById('nav-cv-button');
+
+        cvDownloadButton && cvDownloadButton.addEventListener('click', function() {
+            fbq('trackCustom', 'CvDownloaded', {path: window.siteConfig.path});
+            fbq('track', 'Lead');
+        });
+
+        function getHeight() {
+          var body = document.body,
+            html = document.documentElement;
+
+          return Math.max(
+            body.scrollHeight,
+            body.offsetHeight,
+            html.clientHeight,
+            html.scrollHeight,
+            html.offsetHeight
+          ) - Math.max(
+            document.documentElement.clientWidth,
+            window.innerWidth || 0
+          );
+        }
+
+        function scrollDistance() {
+          if (!window.scrollEvents) {
+            window.scrollEvents = {};
+          }
+
+          if (!window.scrollEventsQuarters) {
+            window.scrollEventsQuarters = {};
+          }
+
+          var pageOffset = Math.floor(window.pageYOffset / 500);
+          var percent = Math.floor(100 * window.pageYOffset / getHeight());
+
+          if (percent > 99) {
+            percent = 99;
+          }
+
+          var quarter = Math.floor(percent / 25);
+
+          if (!window.scrollEvents[pageOffset]) {
+            window.scrollEvents[pageOffset] = true;
+            fbq('trackCustom', 'scrollDepthAbs', {path: window.siteConfig.path, depth: `${pageOffset * 500} - ${(pageOffset+1) * 500}`});
+          }
+
+          if (!window.scrollEventsQuarters[quarter]) {
+            window.scrollEventsQuarters[quarter] = true;
+            fbq('trackCustom', 'scrollDepthPercent', {path: window.siteConfig.path, depth: `${quarter * 25} - ${(quarter+1) * 25}`});
+          }
+
+          if(!window.scrollEventSend && window.pageYOffset > 3000) {
+            window.scrollEventSend = true;
+
+            fbq('track', 'ViewContent');
+          }
+        }
+
+        document.addEventListener('scroll', scrollDistance);
+      })();
+    </script>
 </body>
 </html>
