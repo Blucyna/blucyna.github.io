@@ -41,10 +41,9 @@
 }
 
 .live-preview-button-container {
-    width: 100%;
     display: flex;
-    flex: 1;
-    justify-content: center;
+    align-content: center;
+    margin-right: 10px;
 }
 
 .p_section--text .text-container a.live-preview-btn {
@@ -106,4 +105,11 @@ a.previous:hover {
 
 .grey {
     color:#585858
+}
+
+.live-preview-buttons {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-content: center;
 }
