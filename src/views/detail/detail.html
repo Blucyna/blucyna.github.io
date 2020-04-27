@@ -58,7 +58,7 @@
             --p2Height: 16px;
 
             --projectTitleFont: "Source Sans Pro";
-            --projectTitleColor: #ffffff;
+            --projectTitleColor: #585858;
             --projectTitleWeight: bold;
             --projectTitleStyle: normal;
 
@@ -66,7 +66,7 @@
             --projectTitleHeight: 36px;
 
             --projectSubTitleFont: "PT Serif";
-            --projectSubTitleColor: #ffffff;
+            --projectSubTitleColor: #585858;
             --projectSubTitleWeight: normal;
             --projectSubTitleStyle: normal;
 
@@ -154,8 +154,8 @@
 
                     <div class="text-wrapper">
                         <div class="text-container txt-on-img">
-                            <h1>{{entry.name}}</h1>
-                            <h2>{{entry.subtitle}}</h2>
+                            <h1 class="grey">{{entry.name}}</h1>
+                            <h2 class="grey">{{entry.subtitle}}</h2>
                         </div>
                     </div>
                 </div>
@@ -178,9 +178,11 @@
                 </div>
             </section>
 
-            <div class="live-preview-button-container">
-                <a href="{{entry.url}}" id="live-preview-btn" target="_blank" class="live-preview-btn">Live preview</a>
-            </div>
+            {% for preview in entry.livePreviews %}
+                <div class="live-preview-button-container">
+                    <a href="{{preview.path}}" id="{{preview.id}}"target="_blank" class="live-preview-btn">{{preview.label}}</a>
+                </div>
+            {% endfor %}
 
             <section class="ufo--case-study-section p_section p_section--text text" style=" ">
                 <div class="ufo--p-container-fluid">

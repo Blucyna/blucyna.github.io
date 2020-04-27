@@ -1,39 +1,50 @@
 module.exports = [
   {
-    name: 'Furniture Shop',
-    subtitle: 'Wireframe, Prototype & Mockup',
-    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+    name: 'Maynooth Furniture',
+    subtitle: 'Online Shop',
+    description: 'This project of online shop includes the prototype and mockup. The persona I focused on is Mandy - 40 year old business woman who wants to redecorate her apartament and is looking for some inspiration in furniture.',
     cover: 'img/shop/01-cover.jpg',
     miniCover: 'img/shop/01-mini.jpg',
-    url: 'http://url.pl',
     images: [
-      { path: 'img/shop/suggestion-customer-journey.png', mobile: false },
-      { path: 'img/shop/suggestion-user-journey.png', mobile: false },
-      { path: 'img/shop/gallery-sample-tall-01.png', mobile: true },
-      { path: 'img/shop/gallery-sample-tall-02.png', mobile: true },
-      { path: 'img/shop/gallery-sample-tall-03.png', mobile: true },
-    ]
-  },
-  {
-    name: 'Second',
-    subtitle: 'Second project',
-    description: 'This is my second project',
-    cover: '',
-    miniCover: 'img/second/02-mini.jpg',
-    url: '',
-    images: [
-
-    ]
-  },
-  {
-    name: 'Third',
-    subtitle: 'Third project',
-    description: 'This is my third project',
-    cover: '',
-    miniCover: 'img/third/03-mini.jpg',
-    url: '',
-    images: [
-
+      { path: 'img/shop/mockups/Bedroom-Mockup.png', mobile: false },
+      { path: 'img/shop/mockups/Bucket–Mockup.png', mobile: false },
+      { path: 'img/shop/mockups/Clearence deals–Mockup.png', mobile: false },
+      { path: 'img/shop/mockups/Contact-Page–Mockup.png', mobile: false },
+      { path: 'img/shop/mockups/Home-Page-1336–Mockup.png', mobile: false },
+      { path: 'img/shop/mockups/Inspiration-ideas–Mockup.png', mobile: false },
+      { path: 'img/shop/mockups/Kitchen-Dining-Mockup.png', mobile: false },
+      { path: 'img/shop/mockups/Living-Room–Mockup.png', mobile: false },
+      { path: 'img/shop/mockups/Login-Registration–Mockup.png', mobile: false },
+      { path: 'img/shop/mockups/New-in-store–Mockup.png', mobile: false },
+      { path: 'img/shop/mockups/Other-Mockup.png', mobile: false },
+      { path: 'img/shop/mockups/Payment–Mockup.png', mobile: false },
+      { path: 'img/shop/mockups/Product-Page-Bedroom.png', mobile: false },
+      { path: 'img/shop/mockups/Product-Page-Kitchen-Dining-Mockup.png', mobile: false },
+      { path: 'img/shop/mockups/Product-Page-Living-Room–Mockup.png', mobile: false },
+      { path: 'img/shop/mockups/Product-Page-Living-Room–Mockup–1.png', mobile: false },
+      { path: 'img/shop/mobile/iPhone-X-XS-11-Pro–Dashboard.png', mobile: true },
+      { path: 'img/shop/mobile/iPhone-X-XS-11-Pro–Introduction-1.png', mobile: true },
+      { path: 'img/shop/mobile/iPhone-X-XS-11-Pro–Sign-up.png', mobile: true },
+    ],
+    livePreviews: [
+      {label: 'Preview prototype ', id: 'preview-prototype', path: 'previews/shop/prototype/Home_Page___1336.html'},
+      {label: 'Preview mobile mockup ', id: 'preview-mobile-mockup', path: 'previews/shop/mobile-mockup/iPhone_X_XS_11_Pro___Dashboard.html'},
     ]
   },
 ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -7,7 +7,7 @@
     "nunjucks": "^3.2.1"
   },
   "scripts": {
-    "build": "rm -rf build && mkdir build && cp CNAME build && cp -r src/public build && node src/builder.js",
+    "build": "rm -rf build && mkdir build && cp CNAME build && cp -r src/previews build && cp -r src/public build && node src/builder.js",
     "deploy": "gh-pages -d build -b master"
   },
   "homepage": "https://blucyna.github.io/portfolio"

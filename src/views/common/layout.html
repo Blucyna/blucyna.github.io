@@ -176,11 +176,15 @@
 
     <script>
       (function() {
-        var previewButton = document.getElementById('live-preview-btn');
+        var previewButtons = document.getElementsByClassName('live-preview-btn');
 
-        previewButton && previewButton.addEventListener('click', function() {
-          fbq('trackCustom', 'ClickPreview', {path: window.siteConfig.path});
-        });
+        Array.from(previewButtons).forEach(function(button) {
+          button.addEventListener('click', function() {
+            var id = this.getAttribute('id');
+            console.log('button clicked', id)
+            fbq('trackCustom', 'ClickPreview', {path: window.siteConfig.path, buttonId: id});
+          });
+        })
 
         var footerContactButton = document.getElementById('footer-contact-button');
 
