@@ -250,7 +250,7 @@
           if(!window.scrollEventSend && window.pageYOffset > 3000) {
             window.scrollEventSend = true;
 
-            fbq('track', 'ViewContent', window.siteConfig.path);
+            fbq('track', 'ViewContent', {content_type: window.siteConfig.path});
           }
         }
 
