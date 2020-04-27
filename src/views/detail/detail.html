@@ -177,13 +177,13 @@
                     </div>
                 </div>
             </section>
-
+            <div class="live-preview-buttons">
             {% for preview in entry.livePreviews %}
                 <div class="live-preview-button-container">
                     <a href="{{preview.path}}" id="{{preview.id}}"target="_blank" class="live-preview-btn">{{preview.label}}</a>
                 </div>
             {% endfor %}
-
+            </div>
             <section class="ufo--case-study-section p_section p_section--text text" style=" ">
                 <div class="ufo--p-container-fluid">
                     <div class="text-container">
