@@ -4,8 +4,8 @@
     <meta property="og:title" content="blucy.pl - Lucyna Bugara UX / UI designer" />
     <meta property="og:url" content="https://blucy.pl" />
     <meta property="og:type" content="website" />
-    <meta property="og:description" content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
-    <meta property="og:image" content="https://blucy.pl/public/img/avatar.png" />
+    <meta property="og:description" content="I started my career in IT as Project Manager. In time I realised that the most exciting part of the project for me is creative planning of UX/UI and Web Design. I&#39;ve always had multiple visions and ideas instantly while looking at the brief and tried to focus on what is going on in users head, how I can help him. I decided that my imagination is way to big to not start challenge it into the design :) " />
+    <meta property="og:image" content="https://blucy.pl/public/img/avatar.jpg" />
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -31,7 +31,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|PT+Serif:400,700" rel="stylesheet">
 
-    <link rel="stylesheet" href="public/css/styles.css?cache=1587985409323">
+    <link rel="stylesheet" href="public/css/styles.css?cache=1588018106245">
 
     
         <title>blucy.pl - Lucyna Bugara UX / UI designer</title>
@@ -133,14 +133,14 @@
                                 <div class="fake-cut"></div>
                                 <div class="fake-cut-line"></div>
                                 <div class="profile-cover profile-picture">
-                                    <img src="public/img/avatar.png">
+                                    <img src="public/img/avatar.jpg">
                                 </div>
                                 <div class="profile-short-cv">
                                     <div class="profile-about">
                                         <h1>Lucyna Bugara</h1>
                                         <h3>UX / UI designer</h3>
                                         <br />
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <p>I started my career in IT as Project Manager. In time I realised that the most exciting part of the project for me is creative planning of UX/UI and Web Design. I&#39;ve always had multiple visions and ideas instantly while looking at the brief and tried to focus on what is going on in users head, how I can help him. I decided that my imagination is way to big to not start challenge it into the design :) </p>
                                     </div>
                                     <div class="profile-links">
                                         <div class="social-platforms">
@@ -159,7 +159,7 @@
                             
     <div class="profile-view-nav">
         <div class="nav-item active">Work</div>
-        <a href="public/cv.pdf" target="_blank" rel="nofollow noopener" id="nav-cv-button" class="nav-item">Resume</a>
+        <a href="public/L.Bugara_Resume.pdf" target="_blank" rel="nofollow noopener" id="nav-cv-button" class="nav-item">Resume</a>
         <a href="mailto:lucyna.bugara@gmail.com" id="nav-contact-button" class="nav-item">Contact</a>
     </div>
 
@@ -168,38 +168,14 @@
     <div class="ufo--user-projects">
         <div class="projects-list">
             
-                <a href="furniture-shop.html" title="Furniture Shop">
+                <a href="maynooth-furniture.html" title="Maynooth Furniture">
                     <div class="project title-is--visible title-is--below title-is--dark thumbnail-is--small thumbnail-is--small-under title-align-- title-justify--center">
                         <div class="project-name">
-                            <div class="project-title">Furniture Shop</div>
-                            <div class="project-subtitle">Wireframe, Prototype &amp; Mockup</div>
+                            <div class="project-title">Maynooth Furniture</div>
+                            <div class="project-subtitle">Online Shop</div>
                         </div>
                         <div class="image-container">
-                            <img src="public/img/shop/01-mini.jpg" alt="Furniture Shop">
-                        </div>
-                    </div>
-                </a>
-            
-                <a href="second.html" title="Second">
-                    <div class="project title-is--visible title-is--below title-is--dark thumbnail-is--small thumbnail-is--small-under title-align-- title-justify--center">
-                        <div class="project-name">
-                            <div class="project-title">Second</div>
-                            <div class="project-subtitle">Second project</div>
-                        </div>
-                        <div class="image-container">
-                            <img src="public/img/second/02-mini.jpg" alt="Second">
-                        </div>
-                    </div>
-                </a>
-            
-                <a href="third.html" title="Third">
-                    <div class="project title-is--visible title-is--below title-is--dark thumbnail-is--small thumbnail-is--small-under title-align-- title-justify--center">
-                        <div class="project-name">
-                            <div class="project-title">Third</div>
-                            <div class="project-subtitle">Third project</div>
-                        </div>
-                        <div class="image-container">
-                            <img src="public/img/third/03-mini.jpg" alt="Third">
+                            <img src="public/img/shop/01-mini.jpg" alt="Maynooth Furniture">
                         </div>
                     </div>
                 </a>
@@ -216,11 +192,15 @@
 
     <script>
       (function() {
-        var previewButton = document.getElementById('live-preview-btn');
+        var previewButtons = document.getElementsByClassName('live-preview-btn');
 
-        previewButton && previewButton.addEventListener('click', function() {
-          fbq('trackCustom', 'ClickPreview', {path: window.siteConfig.path});
-        });
+        Array.from(previewButtons).forEach(function(button) {
+          button.addEventListener('click', function() {
+            var id = this.getAttribute('id');
+            console.log('button clicked', id)
+            fbq('trackCustom', 'ClickPreview', {path: window.siteConfig.path, buttonId: id});
+          });
+        })
 
         var footerContactButton = document.getElementById('footer-contact-button');
 
