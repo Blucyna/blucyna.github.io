@@ -34,18 +34,23 @@ const saveToFile = (view, content) => {
   return fs.writeFileSync(`${outputPath}/${view}`, content)
 }
 
-
 const viewData = {
   config: globalConfig,
   entries,
   cacheBuster: new Date().getTime(),
 };
 
-const getOgTags = (title=globalConfig.meta.title, url= globalConfig.url, description= globalConfig.description) => ({
+const getOgTags = (
+  title= globalConfig.meta.title,
+  url= globalConfig.url,
+  description= globalConfig.description,
+  image=globalConfig.avatar,
+) => ({
   og: {
     title,
     url,
-    description
+    description,
+    image: `${globalConfig.url}/${image}`
   }
 });
 
@@ -58,7 +63,12 @@ const details = new Map(
       entry.path,
       generatePage('detail/detail.html', {
         ...viewData,
-        ...getOgTags(entry.name, `${globalConfig.url}/${entry.path}`, entry.description),
+        ...getOgTags(
+          entry.name,
+          `${globalConfig.url}/${entry.path}`,
+          entry.description,
+          entry.miniCover,
+        ),
         entry,
       }),
     ]
