@@ -177,70 +177,89 @@
                     </div>
                 </div>
             </section>
+
             <div class="live-preview-buttons">
-            {% for preview in entry.livePreviews %}
-                <div class="live-preview-button-container">
-                    <a href="{{preview.path}}" id="{{preview.id}}"target="_blank" class="live-preview-btn">{{preview.label}}</a>
-                </div>
-            {% endfor %}
+                {% for preview in entry.livePreviews %}
+                    <div class="live-preview-button-container">
+                        <a href="{{preview.path}}" id="{{preview.id}}"target="_blank" class="live-preview-btn">{{preview.label}}</a>
+                    </div>
+                {% endfor %}
             </div>
-            <section class="ufo--case-study-section p_section p_section--text text" style=" ">
-                <div class="ufo--p-container-fluid">
-                    <div class="text-container">
-                        <div class="text">
-                            <h3>Screenshots</h3>
+
+            {% for flow in entry.flows %}
+                <div class="ufo--p-container-fluid" style="padding-top:20px; padding-bottom:20px;">
+                    <div class="media-container display-mode--default" style=" ">
+                        <div class="mockup--mobile--semi-realistic--light--no-notch--shadow">
+                            <div class="ufo-mockup--display">
+                                <div class="ufo-mockup--screen">
+                                    <div class="ufo-mockup--scroller ps">
+                                        <div class="image">
+                                            <img src="{{flow}}" alt="Flow of {{entry.name}}">
+                                        </div>
+                                        <div class="ps__rail-x" style="left: 0px; bottom: 2px;">
+                                            <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+                                        </div>
+                                        <div class="ps__rail-y" style="top: 0px; right: 0px;">
+                                            <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ufo-mockup--frame">
+                                    <img src="public/img/mobile.svg">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            {% endfor %}
 
             {% for image in entry.images %}
-                {% if image.mobile %}
-                    <section class="ufo--case-study-section p_section p_section--horizontal-split flipped-false mockup-on" style=" ">
-                        <div class="ufo--p-container-fluid">
-                            <div class="media-container display-mode--default" style=" ">
-                                <div class="mockup--mobile--semi-realistic--light--no-notch--shadow">
-                                    <div class="ufo-mockup--display">
-                                        <div class="ufo-mockup--screen">
-                                            <div class="ufo-mockup--scroller ps">
-                                                <div class="image">
-                                                    <img src="{{image.path}}" alt="Screenshot of {{entry.name}}">
-                                                </div>
-                                                <div class="ps__rail-x" style="left: 0px; bottom: 2px;">
-                                                    <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
-                                                </div>
-                                                <div class="ps__rail-y" style="top: 0px; right: 0px;">
-                                                    <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
-                                                </div>
+                <section id="section-7" class="ufo--case-study-section p_section p_section--image image " style=" ">
+                    <div class="ufo--p-container-fluid">
+                        <div class="media-container image-container--fluid display-mode--default  " style=" ">
+                            <div class="media-box  ">
+                                <div class="image">
+                                    <img src="{{image}}" alt="Screenshot of {{entry.name}}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            {% endfor %}
+
+            <section class="ufo--case-study-section p_section p_section--horizontal-split flipped-false mockup-on" style="padding-top:40px;">
+                <div style="display:flex;flex-direction: row;flex-wrap: wrap;justify-content:center;align-content: center">
+                    {% for image in entry.mobileImages %}
+                        <div style="margin-bottom:40px; flex:1;flex-basis:33%">
+                            <div class="mockup--mobile--semi-realistic--light--no-notch--shadow">
+                                <div class="ufo-mockup--display">
+                                    <div class="ufo-mockup--screen">
+                                        <div class="ufo-mockup--scroller ps">
+                                            <div class="image">
+                                                <img src="{{image}}" alt="Mobile screenshot of {{entry.name}}">
+                                            </div>
+                                            <div class="ps__rail-x" style="left: 0px; bottom: 2px;">
+                                                <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+                                            </div>
+                                            <div class="ps__rail-y" style="top: 0px; right: 0px;">
+                                                <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
                                             </div>
                                         </div>
-                                        <div class="ufo-mockup--frame">
-                                            <img src="public/img/mobile.svg">
-                                        </div>
+                                    </div>
+                                    <div class="ufo-mockup--frame">
+                                        <img src="public/img/mobile.svg">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </section>
-                {% else %}
-                    <section id="section-7" class="ufo--case-study-section p_section p_section--image image " style=" ">
-                        <div class="ufo--p-container-fluid">
-                            <div class="media-container image-container--fluid display-mode--default  " style=" ">
-                                <div class="media-box  ">
-                                    <div class="image">
-                                        <img src="{{image.path}}" alt="Screenshot of {{entry.name}}">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                {% endif %}
-            {% endfor %}
+                    {% endfor %}
+                </div>
+            </section>
+
         </div>
         <div class="scroll-to-top" onclick="scrollPageToTop()"></div>
     </main>
     <footer class="project-footer">
-
         <div class="footer-share">
             <div class="ufo--p-container-fluid">
                 <div class="footer-share-content ">

@@ -20,10 +20,10 @@ const entries = content.map(entry => ({
   title: `${globalConfig.meta.title} - ${entry.name}`,
   cover: withPublicPath(entry.cover),
   miniCover: withPublicPath(entry.miniCover),
-  images: entry.images.map(image => ({
-    ...image,
-    path: withPublicPath(image.path)
-  })),
+  images: entry.images.map(withPublicPath),
+  carouselImages: entry.carouselImages.map(withPublicPath),
+  mobileImages: entry.mobileImages.map(withPublicPath),
+  flows: entry.flows.map(withPublicPath),
 }));
 
 const generatePage = (view, data) => {

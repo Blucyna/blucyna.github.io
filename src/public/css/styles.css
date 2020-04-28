@@ -112,4 +112,5 @@ a.previous:hover {
     justify-content: center;
     flex-direction: row;
     align-content: center;
+    margin-bottom:20px;
 }
