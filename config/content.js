@@ -1,7 +1,7 @@
 module.exports = [
   {
     name: 'Maynooth Furniture',
-    subtitle: 'Online Shop',
+    subtitle: 'Online Shop Concept',
     description: 'This project of online shop includes the prototype and mockup. The persona I focused on is Mandy - 40 year old business woman who wants to redecorate her apartament and is looking for some inspiration in furniture.',
     cover: 'img/shop/shop-cover.jpg',
     miniCover: 'img/shop/shop-mini.jpg',
