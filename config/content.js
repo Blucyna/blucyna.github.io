@@ -40,7 +40,8 @@ module.exports = [
       'img/shop/mobile/iPhoneX-XS-11Pro–Sign-up–1.png',
     ],
     livePreviews: [
-      {label: 'Preview prototype ', id: 'preview-prototype', path: 'previews/shop/prototype/Home_Page___1336.html'},
+      {label: 'Desktop prototype ', id: 'preview-prototype', path: 'https://xd.adobe.com/view/1fe51c59-ebbb-4d4d-7eb6-d97b82dbf884-69d4'},
+      //{label: 'Preview prototype ', id: 'preview-prototype', path: 'previews/shop/prototype/Home_Page___1336.html'},
       //{label: 'Preview mobile mockup ', id: 'preview-mobile-mockup', path: 'previews/shop/mobile-mockup/iPhone_X_XS_11_Pro___Dashboard.html'},
     ]
   },
