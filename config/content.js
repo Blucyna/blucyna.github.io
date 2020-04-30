@@ -38,6 +38,7 @@ module.exports = [
       'img/shop/mobile/iPhoneX-XS-11Pro–Dashboard–Inspiration2–7.png',
       'img/shop/mobile/iPhoneX-XS-11Pro–Login–1.png',
       'img/shop/mobile/iPhoneX-XS-11Pro–Sign-up–1.png',
+      'img/shop/mobile/iPhoneX-XS-11Pro-Screen.png',
     ],
     livePreviews: [
       {label: 'Desktop prototype ', id: 'preview-prototype', path: 'https://xd.adobe.com/view/1fe51c59-ebbb-4d4d-7eb6-d97b82dbf884-69d4'},
