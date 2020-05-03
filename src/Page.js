@@ -60,6 +60,10 @@ class Page {
   }
 
   addComponent(component) {
+    if (!component) {
+      return this;
+    }
+
     this.components.push(component);
 
     return this;

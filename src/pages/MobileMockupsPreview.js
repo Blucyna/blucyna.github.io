@@ -18,6 +18,7 @@ class MobileMockupsPreview extends Page {
           `${this.getPublicPath()}/${data.cover}`,
           data.name,
           data.subtitle,
+          data.coverTextColor,
           data.parentSite,
         ),
       )

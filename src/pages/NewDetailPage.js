@@ -26,6 +26,7 @@ class DetailPage extends Page {
           `${this.getPublicPath()}/${data.cover}`,
           data.name,
           data.subtitle,
+          data.coverTextColor,
           this.globalConfig.url
         ),
       )
@@ -54,8 +55,8 @@ class DetailPage extends Page {
             new components.DivComponent('text', [
               new components.H3Component('Project decisions'),
               new components.TextComponent(data.projectDescription),
-              new components.ListComponent(data.projectDescriptionBulletPoints)
-            ])
+              data.projectDescriptionBulletPoints ? new components.ListComponent(data.projectDescriptionBulletPoints) : null
+            ].filter(i => !!i))
           ])
         )
       )
@@ -63,9 +64,8 @@ class DetailPage extends Page {
         new components.TwoColumnsComponent(
           new components.DivComponent('text-container', [
             new components.DivComponent('text', [
-              new components.H3Component('Project description'),
-              new components.TextComponent(data.projectDescription),
-              new components.ListComponent(data.projectDescriptionBulletPoints)
+              new components.H3Component('What have I learned from this project?'),
+              new components.ListComponent(data.learnedThings)
             ])
           ]),
           new components.ImageComponent(
@@ -75,18 +75,10 @@ class DetailPage extends Page {
         )
       )
       .addComponent(
-        new components.TwoColumnsComponent(
-          new components.ImageComponent(
+          new components.FullImageComponent(
             `${this.getPublicPath()}/${data.mobileShowcase}`,
-            'Mobile application flow'
-          ),
-          new components.DivComponent('text-container', [
-            new components.DivComponent('text', [
-              new components.H3Component('What have I learned from this project?'),
-              new components.ListComponent(data.learnedThings)
-            ])
-          ]),
-        )
+            'Showcase'
+          )
       )
       .addComponent(
         new components.DivComponent('live-preview-buttons', [
