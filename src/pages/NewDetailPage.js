@@ -32,13 +32,13 @@ class DetailPage extends Page {
       .addComponent(
         new components.TextSectionComponent([
           new components.H3Component('Persona'),
-          new components.TextComponent(data.description),
+          new components.TextComponent(data.persona),
         ]),
       )
       .addComponent(
         new components.TextSectionComponent([
           new components.H3Component('Goal'),
-          new components.TextComponent(data.description),
+          new components.TextComponent(data.goal),
         ]),
       )
       .addComponent(
@@ -52,7 +52,7 @@ class DetailPage extends Page {
           ),
           new components.DivComponent('text-container', [
             new components.DivComponent('text', [
-              new components.H3Component('Project description'),
+              new components.H3Component('Project decisions'),
               new components.TextComponent(data.projectDescription),
               new components.ListComponent(data.projectDescriptionBulletPoints)
             ])
@@ -82,7 +82,7 @@ class DetailPage extends Page {
           ),
           new components.DivComponent('text-container', [
             new components.DivComponent('text', [
-              new components.H3Component('What I learn from this project:'),
+              new components.H3Component('What have I learned from this project?'),
               new components.ListComponent(data.learnedThings)
             ])
           ]),
