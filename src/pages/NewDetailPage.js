@@ -50,19 +50,23 @@ class DetailPage extends Page {
             `${this.getPublicPath()}/${data.mobileFlow}`,
             'Mobile application flow'
           ),
-          new components.DivComponent('', [
-            new components.H3Component('Project description'),
-            new components.TextComponent(data.projectDescription),
-            new components.ListComponent(data.projectDescriptionBulletPoints)
+          new components.DivComponent('text-container', [
+            new components.DivComponent('text', [
+              new components.H3Component('Project description'),
+              new components.TextComponent(data.projectDescription),
+              new components.ListComponent(data.projectDescriptionBulletPoints)
+            ])
           ])
         )
       )
       .addComponent(
         new components.TwoColumnsComponent(
-          new components.DivComponent('', [
-            new components.H3Component('Project description'),
-            new components.TextComponent(data.projectDescription),
-            new components.ListComponent(data.projectDescriptionBulletPoints)
+          new components.DivComponent('text-container', [
+            new components.DivComponent('text', [
+              new components.H3Component('Project description'),
+              new components.TextComponent(data.projectDescription),
+              new components.ListComponent(data.projectDescriptionBulletPoints)
+            ])
           ]),
           new components.ImageComponent(
             `${this.getPublicPath()}/${data.desktopFlow}`,
@@ -76,9 +80,11 @@ class DetailPage extends Page {
             `${this.getPublicPath()}/${data.mobileShowcase}`,
             'Mobile application flow'
           ),
-          new components.DivComponent('', [
-            new components.H3Component('What I learn from this project:'),
-            new components.ListComponent(data.learnedThings)
+          new components.DivComponent('text-container', [
+            new components.DivComponent('text', [
+              new components.H3Component('What I learn from this project:'),
+              new components.ListComponent(data.learnedThings)
+            ])
           ]),
         )
       )
