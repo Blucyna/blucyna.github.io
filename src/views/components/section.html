@@ -1,0 +1,9 @@
+{% macro section(data, config, componentFactory) %}
+    <section class="ufo--case-study-section p_section p_section--horizontal-split flipped-false mockup-on" style="padding-top:40px;">
+        <div style="display:flex;flex-direction: row;flex-wrap: wrap;justify-content:space-around;align-content: center">
+            {% for component in data.childrens %}
+                {{ componentFactory(component.type, component.data, config) }}
+            {% endfor %}
+        </div>
+    </section>
+{% endmacro %}

@@ -1,0 +1,15 @@
+{% macro twoColumns(data, config, componentFactory) %}
+<section class="ufo--case-study-section p_section p_section--horizontal-split flipped-false two-columns" style=" ">
+    <div class="ufo--p-container-fluid">
+        <div class="ufo--p-multicols">
+            <div class="ufo--p-col media-col ">
+                {{ componentFactory(data.left.type, data.left.data, config) }}
+            </div>
+            <div class="ufo--p-col txt-col">
+                {{ componentFactory(data.right.type, data.right.data, config) }}
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endmacro %}

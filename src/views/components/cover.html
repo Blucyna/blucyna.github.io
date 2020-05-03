@@ -1,0 +1,29 @@
+{% macro cover(data, config) %}
+    <section class="ufo--case-study-section p_section p_section--header-main header-main">
+        <div class="ufo--p-container-fluid">
+            <div class="project-owner">
+                <div class="owner">
+                    <div class="owner-info ">
+                        <div class="owner-name">
+                            <a href="{{data.parentSite}}" class="previous round">&#8249;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ufo--p-container-fluid">
+            <div class="image-container image-container--fluid">
+                <div class="main-grad"></div>
+                <img src="{{data.path}}" alt="">
+            </div>
+
+            <div class="text-wrapper">
+                <div class="text-container txt-on-img">
+                    <h1 class="grey">{{data.name}}</h1>
+                    <h2 class="grey">{{data.subtitle}}</h2>
+                </div>
+            </div>
+        </div>
+
+    </section>
+{% endmacro %}

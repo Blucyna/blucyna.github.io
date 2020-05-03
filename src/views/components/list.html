@@ -1,0 +1,7 @@
+{% macro list(data, config) %}
+    <ul>
+        {% for option in data.options %}
+            <li>{{option}}</li>
+        {% endfor %}
+    </ul>
+{% endmacro %}

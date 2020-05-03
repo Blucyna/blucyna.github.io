@@ -1,0 +1,5 @@
+{% macro preview(data, config) %}
+    <div class="live-preview-button-container">
+        <a href="{{data.url}}" id="{{data.id}}"target="_blank" class="live-preview-btn">{{data.label}}</a>
+    </div>
+{% endmacro %}

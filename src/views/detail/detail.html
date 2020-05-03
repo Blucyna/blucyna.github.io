@@ -1,6 +1,6 @@
 {% extends "../common/layout.html" %}
 
-{% block additionalStyles %}
+{% block additionalHead %}
     <style>
         :root {
             --title-font: "Source Sans Pro", sans-serif;
@@ -125,138 +125,17 @@
                 transform: translate(-50%, -50%);
             }
         }
-
-
-
     </style>
 {% endblock %}
+
+{% import "components/component.html" as componentFactory %}
 
 {% block body %}
     <main>
         <div class="ufo--case-study-container project project_with_theme">
-            <section class="ufo--case-study-section p_section p_section--header-main header-main">
-                <div class="ufo--p-container-fluid">
-                    <div class="project-owner">
-                        <div class="owner">
-                            <div class="owner-info ">
-                                <div class="owner-name">
-                                    <a href="{{config.url}}" class="previous round">&#8249;</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="ufo--p-container-fluid">
-                    <div class="image-container image-container--fluid">
-                        <div class="main-grad"></div>
-                        <img src="{{entry.cover}}" alt="">
-                    </div>
-
-                    <div class="text-wrapper">
-                        <div class="text-container txt-on-img">
-                            <h1 class="grey">{{entry.name}}</h1>
-                            <h2 class="grey">{{entry.subtitle}}</h2>
-                        </div>
-                    </div>
-                </div>
-
-            </section>
-            <section class="ufo--case-study-section p_section p_section--text text" style=" ">
-                <div class="ufo--p-container-fluid">
-                    <div class="text-container">
-                        <div class="text">
-                            <h3>Project description</h3>
-                            <p>{{entry.description}}</p>
-<!--                            <ul>-->
-<!--                                <li>What was the product you worked on?</li>-->
-<!--                                <li>Who was the target audience? What problems do the product solve for them?</li>-->
-<!--                                <li>What was the business challenge your team wanted to solve with this project?</li>-->
-<!--                                <li>What was your role? Who did you work with?</li>-->
-<!--                            </ul>-->
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <div class="live-preview-buttons">
-                {% for preview in entry.livePreviews %}
-                    <div class="live-preview-button-container">
-                        <a href="{{preview.path}}" id="{{preview.id}}"target="_blank" class="live-preview-btn">{{preview.label}}</a>
-                    </div>
-                {% endfor %}
-            </div>
-
-            {% for flow in entry.flows %}
-                <div class="ufo--p-container-fluid" style="padding-top:20px; padding-bottom:20px;">
-                    <div class="media-container display-mode--default" style=" ">
-                        <div class="mockup--mobile--semi-realistic--light--no-notch--shadow">
-                            <div class="ufo-mockup--display">
-                                <div class="ufo-mockup--screen">
-                                    <div class="ufo-mockup--scroller ps">
-                                        <div class="image">
-                                            <img src="{{flow}}" alt="Flow of {{entry.name}}">
-                                        </div>
-                                        <div class="ps__rail-x" style="left: 0px; bottom: 2px;">
-                                            <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
-                                        </div>
-                                        <div class="ps__rail-y" style="top: 0px; right: 0px;">
-                                            <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ufo-mockup--frame">
-                                    <img src="public/img/mobile.svg">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            {% for component in components %}
+                {{ componentFactory.component(component.type, component.data, config) }}
             {% endfor %}
-
-            {% for image in entry.images %}
-                <section id="section-7" class="ufo--case-study-section p_section p_section--image image " style=" ">
-                    <div class="ufo--p-container-fluid">
-                        <div class="media-container image-container--fluid display-mode--default  " style=" ">
-                            <div class="media-box  ">
-                                <div class="image">
-                                    <img src="{{image}}" alt="Screenshot of {{entry.name}}">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            {% endfor %}
-
-            <section class="ufo--case-study-section p_section p_section--horizontal-split flipped-false mockup-on" style="padding-top:40px;">
-                <div style="display:flex;flex-direction: row;flex-wrap: wrap;justify-content:space-around;align-content: center">
-                    {% for image in entry.mobileImages %}
-                        <div style="margin-bottom:40px;">
-                            <div class="mockup--mobile--semi-realistic--light--no-notch--shadow">
-                                <div class="ufo-mockup--display">
-                                    <div class="ufo-mockup--screen">
-                                        <div class="ufo-mockup--scroller ps">
-                                            <div class="image">
-                                                <img src="{{image}}" alt="Mobile screenshot of {{entry.name}}">
-                                            </div>
-                                            <div class="ps__rail-x" style="left: 0px; bottom: 2px;">
-                                                <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
-                                            </div>
-                                            <div class="ps__rail-y" style="top: 0px; right: 0px;">
-                                                <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ufo-mockup--frame">
-                                        <img src="public/img/mobile.svg">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            </section>
-
-        </div>
         <div class="scroll-to-top" onclick="scrollPageToTop()"></div>
     </main>
     <footer class="project-footer">

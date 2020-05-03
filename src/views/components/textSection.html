@@ -1,0 +1,13 @@
+{% macro textSection(data, config, componentFactory) %}
+<section class="ufo--case-study-section p_section p_section--text text" style=" ">
+    <div class="ufo--p-container-fluid">
+        <div class="text-container">
+            <div class="text">
+                {% for component in data.childrens %}
+                    {{ componentFactory(component.type, component.data, config) }}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endmacro %}

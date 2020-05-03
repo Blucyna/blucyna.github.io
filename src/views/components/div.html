@@ -1,0 +1,7 @@
+{% macro div(data, config, componentFactory) %}
+<div class="{{data.className}}">
+    {% for component in data.childrens %}
+        {{ componentFactory(component.type, component.data, config) }}
+    {% endfor %}
+</div>
+{% endmacro %}

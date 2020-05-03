@@ -1,0 +1,42 @@
+{% import "components/cover.html" as cover %}
+{% import "components/h3.html" as h3 %}
+{% import "components/text.html" as text %}
+{% import "components/textSection.html" as textSection %}
+{% import "components/section.html" as section %}
+{% import "components/mobileImage.html" as mobileImage %}
+{% import "components/fullImage.html" as fullImage %}
+{% import "components/image.html" as image %}
+{% import "components/preview.html" as preview %}
+{% import "components/div.html" as div %}
+{% import "components/twoColumns.html" as twoColumns %}
+{% import "components/list.html" as list %}
+
+{% macro component(type, data, config) %}
+    {% if type === 'cover' %}
+        {{ cover.cover(data, config) }}
+    {% elseif type === 'h3' %}
+        {{ h3.h3(data, config) }}
+    {% elseif type === 'list' %}
+        {{ list.list(data, config) }}
+    {% elseif type === 'text' %}
+        {{ text.text(data, config) }}
+    {% elseif type === 'mobileImage' %}
+        {{ mobileImage.mobileImage(data, config) }}
+    {% elseif type === 'fullImage' %}
+        {{ fullImage.fullImage(data, config) }}
+    {% elseif type === 'image' %}
+        {{ image.image(data, config) }}
+    {% elseif type === 'preview' %}
+        {{ preview.preview(data, config) }}
+    {% elseif type === 'textSection' %}
+        {{ textSection.textSection(data.data, config, component) }}
+    {% elseif type === 'div' %}
+        {{ div.div(data.data, config, component) }}
+    {% elseif type === 'section' %}
+        {{ section.section(data.data, config, component) }}
+    {% elseif type === 'twoColumns' %}
+        {{ twoColumns.twoColumns(data, config, component) }}
+    {% else %}
+        <div>No Component Defined</div>
+    {% endif %}
+{% endmacro %}

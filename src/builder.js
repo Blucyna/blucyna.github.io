@@ -3,6 +3,9 @@ const fs = require('fs');
 const {global, content} = require('../config');
 
 const Renderer = require('./renderer');
+const DetailPage = require('./pages/NewDetailPage');
+const MobileMockupsPreview = require('./pages/MobileMockupsPreview');
+const DesktopMockupsPreview = require('./pages/DesktopMockupsPreview');
 
 const publicPath = 'public';
 const outputPath = 'build';
@@ -11,31 +14,14 @@ const withPublicPath = (path) => `${publicPath}/${path}`;
 
 const globalConfig = {
   ...global,
+  publicPath,
   avatar: withPublicPath(global.avatar),
   cvFile: withPublicPath(global.cvFile),
 };
 
-const entries = content.map(entry => ({
-  ...entry,
-  path: `${entry.name.replace(/ /g, '-').toLowerCase()}.html`,
-  title: `${globalConfig.meta.title} - ${entry.name}`,
-  cover: withPublicPath(entry.cover),
-  miniCover: withPublicPath(entry.miniCover),
-  images: entry.images.map(withPublicPath),
-  carouselImages: entry.carouselImages.map(withPublicPath),
-  mobileImages: entry.mobileImages.map(withPublicPath),
-  flows: entry.flows.map(withPublicPath),
-}));
-
 const saveToFile = (view, content) => {
   return fs.writeFileSync(`${outputPath}/${view}`, content)
 }
-
-const viewData = {
-  config: globalConfig,
-  entries,
-  cacheBuster: new Date().getTime(),
-};
 
 const getOgTags = (
   title= globalConfig.meta.title,
@@ -53,27 +39,76 @@ const getOgTags = (
 
 const renderer = new Renderer('src/views');
 
-const index = renderer.render('index/index.html', {...viewData, ...getOgTags()});
-const details = new Map(
-  entries.map(
-    (entry) => [
-      entry.path,
-      renderer.render('detail/detail.html', {
-        ...viewData,
-        ...getOgTags(
-          entry.name,
-          `${globalConfig.url}/${entry.path}`,
-          entry.description,
-          entry.miniCover,
-        ),
-        entry,
-      }),
-    ]
-  )
+const mobilePreviews = content.map((entry) =>
+  new MobileMockupsPreview(
+    {...entry, name: `${entry.name} mobile mockups`},
+    renderer,
+    globalConfig
+  ).setName(entry.name)
 );
+
+const desktopPreviews = content.map((entry) => new DesktopMockupsPreview(
+    {...entry, name: `${entry.name} desktop mockups`},
+    renderer,
+    globalConfig
+  ).setName(entry.name)
+);
+
+const details = content.map((entry, index) => new DetailPage(
+  {
+    ...entry,
+    mobileMockupsPreview: {
+      ...entry.mobileMockupsPreview,
+      url: mobilePreviews[index].getPath(),
+    },
+    desktopMockupsPreview: {
+      ...entry.desktopMockupsPreview,
+      url: desktopPreviews[index].getPath(),
+    },
+  },
+  renderer,
+  globalConfig
+));
+
+
+const indexViewData = {
+  config: globalConfig,
+  projects: details.map((page) => ({
+    path: page.getPath(),
+    name: page.getName(),
+    subtitle: page.getSubtitle(),
+    thumbnail: page.getThumbnail(),
+  })),
+  cacheBuster: new Date().getTime(),
+  ...getOgTags()
+};
+
+const index = renderer.render('index/index.html', indexViewData);
 
 //const contact = renderer.render('contact/contact.html', viewData);
 
 saveToFile('index.html', index);
-Array.from(details.keys()).map(path => saveToFile(path, details.get(path)));
+
+details.forEach(page => {
+  saveToFile(page.getPath(), page.render())
+});
+
+mobilePreviews.forEach((page, index) => {
+  saveToFile(
+    page.getPath(),
+    page
+      .setParentSite(details[index].getPath())
+      .render()
+  )
+});
+
+desktopPreviews.forEach((page, index) => {
+  saveToFile(
+    page.getPath(),
+    page
+      .setParentSite(details[index].getPath())
+      .render()
+  )
+});
+
 //saveToFile('contact.html', contact);
