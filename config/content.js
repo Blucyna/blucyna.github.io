@@ -12,8 +12,8 @@ module.exports = [
     mobileShowcase: 'img/shop/mobile-showcase.jpg',
     projectDescription: 'The main task was to place content that would be rich in details but not too overwhelming because I did not want to irritate the customer. The main principles I mainly suggested on were:',
     projectDescriptionBulletPoints: [
-      'Doherty Threshold - use not to many elements in the website to make sure it loads',
-      'Hick’s Law - Because of amount of products I wanted to keep visualisation and steps of purchasing as simple as possible',
+      'Doherty Threshold - I did my best to use as little elements in the website as possible to make sure it loads quickly',
+      'Hick’s Law - because of amount of products I wanted to keep visualisation and steps of purchasing as simple as possible',
       'Jakobs Law - knowing that users prefers navigation they recognize from other websites I did my best to make it innovative yet familiar',
       'Law of similarity - consistency and differentiate in design copy, buttons and navigation to assure that interactive copy is visible and noticed',
     ],
