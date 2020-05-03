@@ -3,9 +3,7 @@ const components = require('../components');
 
 class DetailPage extends Page {
   constructor(data, renderer, globalConfig) {
-    super(data.name, renderer, globalConfig);
-
-    this.data = data;
+    super(data, renderer, globalConfig);
 
     this.viewPath = 'detail/detail.html';
   }

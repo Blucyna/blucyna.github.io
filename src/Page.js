@@ -1,6 +1,6 @@
 class Page {
-  constructor(name, renderer, globalConfig) {
-    this.name = name;
+  constructor(data, renderer, globalConfig) {
+    this.name = data.name;
 
     this.renderer = renderer;
 
@@ -8,7 +8,10 @@ class Page {
     this.path = `${this.name.replace(/ /g, '-').toLowerCase()}.html`;
     this.title = `${this.globalConfig.meta.title} - ${this.name}`;
 
-    this.data = {};
+    this.data = data;
+
+    this.thumbNail = `${this.getPublicPath()}/${data.thumbnail}`;
+    this.subtitle =data.subtitle;
 
     this.metaData = {
       title: this.title,
@@ -29,7 +32,7 @@ class Page {
   }
 
   setSubtitle(subtitle) {
-    this.subTitle = subtitle;
+    this.subtitle = subtitle;
 
     return this;
   }
@@ -89,7 +92,7 @@ class Page {
   }
 
   getSubtitle() {
-    return this.subTitle;
+    return this.subtitle;
   }
 
   getTemplateData() {
