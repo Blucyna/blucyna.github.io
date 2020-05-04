@@ -8,6 +8,10 @@
     </div>
 {% endblock %}
 
+{% block additionalHead %}
+    <link rel="stylesheet" href="public/css/index.css?cache={{cacheBuster}}">
+{% endblock %}
+
 {% block content %}
     <div class="ufo--user-projects">
         <div class="projects-list">
