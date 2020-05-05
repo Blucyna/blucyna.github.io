@@ -71,6 +71,8 @@
         }
     </script>
 
+    <script src="public/js/global.js?cache=1588689483695" defer></script>
+
     <style>
         .profile-page.profile_theme_default .profile-info,
         .profile-page.profile_theme_default .projects-list .project .project-name .project-title,
@@ -112,7 +114,14 @@
     </style>
 
     
-    <link rel="stylesheet" href="public/css/detail.css?cache=1588635738747">
+
+    
+        <script src="public/js/detail.js?cache=1588689483695"  defer></script>
+    
+
+    
+        <link rel="stylesheet" href="public/css/detail.css?cache=1588689483695">
+    
 
     <style>
         :root {
@@ -454,7 +463,7 @@
     
 
             
-        <div class="scroll-to-top" onclick="scrollPageToTop()"></div>
+        <div class="scroll-to-top" id="scroll-to-top"></div>
     </main>
     <footer class="project-footer">
         <div class="footer-share">
@@ -480,145 +489,5 @@
         </div>
     </footer>
 
-    <script>
-      function scrollPageToTop() {
-        let isSmoothScrollSupported = 'scrollBehavior' in document.documentElement.style;
-        if (isSmoothScrollSupported) {
-          window.scroll({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-          });
-        } else {
-          smoothScroll(0, -1);
-        }
-      }
-
-      function smoothScroll(targetOffset, direction) {
-        let currentOffset = window.pageYOffset || document.body.scrollTop;
-        let difference = Math.abs(currentOffset - targetOffset);
-        if (!difference) return;
-        let frames = parseInt(400 / 1000 * 60);
-        let tick = 400 / frames;
-        let perFrame = difference / frames;
-        let timer = setInterval(() => {
-          if (direction > 0) {
-            if (window.pageYOffset >= targetOffset) {
-              scrollBy(0, (targetOffset - difference) * direction);
-              clearInterval(timer);
-              return;
-            }
-          } else {
-            if (window.pageYOffset <= 0) {
-              scrollBy(0, difference * direction);
-              clearInterval(timer);
-              return;
-            }
-          }
-          scrollBy(0, perFrame * direction);
-          if (window.pageYOffset + window.innerHeight === document.body.scrollHeight) clearInterval(timer);
-        }, tick);
-      }
-
-      function scrollDistance() {
-        if (window.pageYOffset > 1200) {
-          if(document.querySelector('.scroll-to-top').classList.contains('visible')) return;
-          document.querySelector('.scroll-to-top').classList.add("visible");
-        } else {
-          document.querySelector('.scroll-to-top').classList.remove("visible");
-        }
-      }
-
-      document.addEventListener('scroll', scrollDistance);
-    </script>
-
-
-    <script>
-      (function() {
-        var previewButtons = document.getElementsByClassName('live-preview-btn');
-
-        Array.from(previewButtons).forEach(function(button) {
-          button.addEventListener('click', function() {
-            var id = this.getAttribute('id');
-            console.log('button clicked', id)
-            fbq('trackCustom', 'ClickPreview', {path: window.siteConfig.path, buttonId: id});
-          });
-        })
-
-        var footerContactButton = document.getElementById('footer-contact-button');
-
-        footerContactButton && footerContactButton.addEventListener('click', function() {
-            fbq('trackCustom', 'ClickContact', {path: window.siteConfig.path, type: 'footer'});
-            fbq('track', 'Lead');
-        });
-
-        var navContactButton = document.getElementById('nav-contact-button');
-
-        navContactButton && navContactButton.addEventListener('click', function() {
-            fbq('trackCustom', 'ClickContact', {path: window.siteConfig.path, type: 'navigation'});
-            fbq('track', 'Lead');
-        });
-
-        var cvDownloadButton = document.getElementById('nav-cv-button');
-
-        cvDownloadButton && cvDownloadButton.addEventListener('click', function() {
-            fbq('trackCustom', 'CvDownloaded', {path: window.siteConfig.path});
-            fbq('track', 'Lead');
-        });
-
-        function getHeight() {
-          var body = document.body,
-            html = document.documentElement;
-
-          return Math.max(
-            body.scrollHeight,
-            body.offsetHeight,
-            html.clientHeight,
-            html.scrollHeight,
-            html.offsetHeight
-          ) - Math.max(
-            document.documentElement.clientWidth,
-            window.innerWidth || 0
-          );
-        }
-
-        function scrollDistance() {
-          if (!window.scrollEvents) {
-            window.scrollEvents = {};
-          }
-
-          if (!window.scrollEventsQuarters) {
-            window.scrollEventsQuarters = {};
-          }
-
-          var pageOffset = Math.floor(window.pageYOffset / 500);
-          var percent = Math.floor(100 * window.pageYOffset / getHeight());
-
-          if (percent > 99) {
-            percent = 99;
-          }
-
-          var quarter = Math.floor(percent / 25);
-
-          if (!window.scrollEvents[pageOffset]) {
-            window.scrollEvents[pageOffset] = true;
-            fbq('trackCustom', 'scrollDepthAbs', {path: window.siteConfig.path, depth: `${pageOffset * 500} - ${(pageOffset+1) * 500}`});
-          }
-
-          if (!window.scrollEventsQuarters[quarter]) {
-            window.scrollEventsQuarters[quarter] = true;
-            fbq('trackCustom', 'scrollDepthPercent', {path: window.siteConfig.path, depth: `${quarter * 25} - ${(quarter+1) * 25}`});
-          }
-
-          if(!window.scrollEventSend && window.pageYOffset > 3000) {
-            window.scrollEventSend = true;
-
-            fbq('track', 'ViewContent', {content_type: window.siteConfig.path});
-          }
-        }
-
-        document.addEventListener('scroll', scrollDistance);
-      })();
-    </script>
 </body>
 </html>

@@ -71,6 +71,8 @@
         }
     </script>
 
+    <script src="public/js/global.js?cache=1588689483636" defer></script>
+
     <style>
         .profile-page.profile_theme_default .profile-info,
         .profile-page.profile_theme_default .projects-list .project .project-name .project-title,
@@ -112,7 +114,8 @@
     </style>
 
     
-    <link rel="stylesheet" href="public/css/index.css?cache=1588635738690">
+    <link rel="stylesheet" href="public/css/index.css?cache=1588689483636">
+    <script src="public/js/index.js?cache=1588689483636" defer></script>
 
 </head>
 <body>
@@ -200,93 +203,5 @@
             </div>
         </main>
     
-
-    <script>
-      (function() {
-        var previewButtons = document.getElementsByClassName('live-preview-btn');
-
-        Array.from(previewButtons).forEach(function(button) {
-          button.addEventListener('click', function() {
-            var id = this.getAttribute('id');
-            console.log('button clicked', id)
-            fbq('trackCustom', 'ClickPreview', {path: window.siteConfig.path, buttonId: id});
-          });
-        })
-
-        var footerContactButton = document.getElementById('footer-contact-button');
-
-        footerContactButton && footerContactButton.addEventListener('click', function() {
-            fbq('trackCustom', 'ClickContact', {path: window.siteConfig.path, type: 'footer'});
-            fbq('track', 'Lead');
-        });
-
-        var navContactButton = document.getElementById('nav-contact-button');
-
-        navContactButton && navContactButton.addEventListener('click', function() {
-            fbq('trackCustom', 'ClickContact', {path: window.siteConfig.path, type: 'navigation'});
-            fbq('track', 'Lead');
-        });
-
-        var cvDownloadButton = document.getElementById('nav-cv-button');
-
-        cvDownloadButton && cvDownloadButton.addEventListener('click', function() {
-            fbq('trackCustom', 'CvDownloaded', {path: window.siteConfig.path});
-            fbq('track', 'Lead');
-        });
-
-        function getHeight() {
-          var body = document.body,
-            html = document.documentElement;
-
-          return Math.max(
-            body.scrollHeight,
-            body.offsetHeight,
-            html.clientHeight,
-            html.scrollHeight,
-            html.offsetHeight
-          ) - Math.max(
-            document.documentElement.clientWidth,
-            window.innerWidth || 0
-          );
-        }
-
-        function scrollDistance() {
-          if (!window.scrollEvents) {
-            window.scrollEvents = {};
-          }
-
-          if (!window.scrollEventsQuarters) {
-            window.scrollEventsQuarters = {};
-          }
-
-          var pageOffset = Math.floor(window.pageYOffset / 500);
-          var percent = Math.floor(100 * window.pageYOffset / getHeight());
-
-          if (percent > 99) {
-            percent = 99;
-          }
-
-          var quarter = Math.floor(percent / 25);
-
-          if (!window.scrollEvents[pageOffset]) {
-            window.scrollEvents[pageOffset] = true;
-            fbq('trackCustom', 'scrollDepthAbs', {path: window.siteConfig.path, depth: `${pageOffset * 500} - ${(pageOffset+1) * 500}`});
-          }
-
-          if (!window.scrollEventsQuarters[quarter]) {
-            window.scrollEventsQuarters[quarter] = true;
-            fbq('trackCustom', 'scrollDepthPercent', {path: window.siteConfig.path, depth: `${quarter * 25} - ${(quarter+1) * 25}`});
-          }
-
-          if(!window.scrollEventSend && window.pageYOffset > 3000) {
-            window.scrollEventSend = true;
-
-            fbq('track', 'ViewContent', {content_type: window.siteConfig.path});
-          }
-        }
-
-        document.addEventListener('scroll', scrollDistance);
-      })();
-    </script>
 </body>
 </html>
