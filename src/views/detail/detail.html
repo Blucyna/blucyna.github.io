@@ -1,7 +1,14 @@
 {% extends "../common/layout.html" %}
 
 {% block additionalHead %}
-    <link rel="stylesheet" href="public/css/detail.css?cache={{cacheBuster}}">
+
+    {% for script in scripts %}
+        <script src="{{script.path}}?cache={{cacheBuster}}" {{script.async}} {{script.defer}}></script>
+    {% endfor %}
+
+    {% for style in styles %}
+        <link rel="stylesheet" href="{{style}}?cache={{cacheBuster}}">
+    {% endfor %}
 
     <style>
         :root {
@@ -138,7 +145,7 @@
             {% for component in components %}
                 {{ componentFactory.component(component.type, component.data, config) }}
             {% endfor %}
-        <div class="scroll-to-top" onclick="scrollPageToTop()"></div>
+        <div class="scroll-to-top" id="scroll-to-top"></div>
     </main>
     <footer class="project-footer">
         <div class="footer-share">
@@ -163,56 +170,4 @@
             </div>
         </div>
     </footer>
-
-    <script>
-      function scrollPageToTop() {
-        let isSmoothScrollSupported = 'scrollBehavior' in document.documentElement.style;
-        if (isSmoothScrollSupported) {
-          window.scroll({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-          });
-        } else {
-          smoothScroll(0, -1);
-        }
-      }
-
-      function smoothScroll(targetOffset, direction) {
-        let currentOffset = window.pageYOffset || document.body.scrollTop;
-        let difference = Math.abs(currentOffset - targetOffset);
-        if (!difference) return;
-        let frames = parseInt(400 / 1000 * 60);
-        let tick = 400 / frames;
-        let perFrame = difference / frames;
-        let timer = setInterval(() => {
-          if (direction > 0) {
-            if (window.pageYOffset >= targetOffset) {
-              scrollBy(0, (targetOffset - difference) * direction);
-              clearInterval(timer);
-              return;
-            }
-          } else {
-            if (window.pageYOffset <= 0) {
-              scrollBy(0, difference * direction);
-              clearInterval(timer);
-              return;
-            }
-          }
-          scrollBy(0, perFrame * direction);
-          if (window.pageYOffset + window.innerHeight === document.body.scrollHeight) clearInterval(timer);
-        }, tick);
-      }
-
-      function scrollDistance() {
-        if (window.pageYOffset > 1200) {
-          if(document.querySelector('.scroll-to-top').classList.contains('visible')) return;
-          document.querySelector('.scroll-to-top').classList.add("visible");
-        } else {
-          document.querySelector('.scroll-to-top').classList.remove("visible");
-        }
-      }
-
-      document.addEventListener('scroll', scrollDistance);
-    </script>
 {% endblock %}

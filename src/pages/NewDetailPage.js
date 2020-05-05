@@ -21,6 +21,8 @@ class DetailPage extends Page {
       .setThumbnail(`${this.getPublicPath()}/${data.thumbnail}`)
       .setDescription(data.description)
       .setSubtitle(data.subtitle)
+      .addStyle(`${this.getPublicPath()}/css/detail.css`)
+      .addScript(`${this.getPublicPath()}/js/detail.js`, false, true)
       .addComponent(
         new components.CoverComponent(
           `${this.getPublicPath()}/${data.cover}`,

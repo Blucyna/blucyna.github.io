@@ -22,6 +22,9 @@ class Page {
 
     this.components = [];
 
+    this.styles = [];
+    this.scripts = [];
+
     this.viewPath = 'detail2/detail.html';
   }
 
@@ -75,6 +78,22 @@ class Page {
     return this;
   }
 
+  addStyle(path) {
+    this.styles.push(path);
+
+    return this;
+  }
+
+  addScript(path, async, defer) {
+    this.scripts.push({
+      path,
+      async: async ? 'async' : '',
+      defer: defer ? 'defer' : '',
+    });
+
+    return this;
+  }
+
   getName() {
     return this.name;
   }
@@ -107,6 +126,8 @@ class Page {
       components: this.getComponentsData(),
       path: this.path,
       title: this.title,
+      scripts: this.scripts,
+      styles: this.styles,
     }
   }
 
