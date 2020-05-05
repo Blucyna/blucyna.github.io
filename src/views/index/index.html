@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block additionalHead %}
-    <link rel="stylesheet" href="public/css/index.css?cache={{cacheBuster}}">
+    <link rel="preload" href="public/css/index.css?cache={{cacheBuster}}" as="style" onload="this.rel='stylesheet'">
     <script src="public/js/index.js?cache={{cacheBuster}}" defer></script>
 {% endblock %}
 

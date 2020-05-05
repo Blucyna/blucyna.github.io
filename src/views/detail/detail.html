@@ -7,7 +7,7 @@
     {% endfor %}
 
     {% for style in styles %}
-        <link rel="stylesheet" href="{{style}}?cache={{cacheBuster}}">
+        <link rel="preload" href="{{style}}?cache={{cacheBuster}}" as="style" onload="this.rel='stylesheet'">
     {% endfor %}
 
     <style>
