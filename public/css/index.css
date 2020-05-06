@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Muli:900&display=swap);
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700|Source+Serif+Pro|Lato:400,700|PT+Serif:400,400i,700,700i|Montserrat:400,500,700|Noto+Serif|Work+Sans:400,500|Raleway:400,800,900|Muli);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700|Source+Serif+Pro|Lato:400,700|PT+Serif:400,400i,700,700i|Montserrat:400,500,700|Noto+Serif|Work+Sans:400,500|Raleway:400,800,900|Muli&display=swap);
 
 *,:after,:before{box-sizing:border-box}
 html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-ms-overflow-style:scrollbar;-webkit-tap-highlight-color:transparent}
@@ -158,7 +158,8 @@ and (-webkit-min-device-pixel-ratio:2) {
     src:url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?v=4.7.0);
     src:url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.eot#iefix&v=4.7.0) format("embedded-opentype"),url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0) format("woff2"),url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0) format("woff"),url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf?v=4.7.0) format("truetype"),url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular) format("svg");
     font-weight:400;
-    font-style:normal
+    font-style:normal;
+    font-display: swap;
 }
 
 .fa{display:inline-block;font:normal normal normal 14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
