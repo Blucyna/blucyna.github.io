@@ -7,14 +7,6 @@
     <meta property="og:description" content="{{og.description}}" />
     <meta property="og:image" content="{{og.image}}" />
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-545JHV8');</script>
-    <!-- End Google Tag Manager -->
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffffff">
@@ -34,6 +26,16 @@
     {% block title %}
         <title>{{config.meta.title}}</title>
     {% endblock %}
+
+    {% block additionalHead %} {% endblock %}
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-545JHV8');</script>
+    <!-- End Google Tag Manager -->
 
     <!-- Hotjar Tracking Code for blucy.pl -->
     <script>
@@ -112,9 +114,6 @@
             }
         }
     </style>
-
-    {% block additionalHead %}
-    {% endblock %}
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
