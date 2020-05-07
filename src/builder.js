@@ -16,6 +16,7 @@ const globalConfig = {
   ...global,
   publicPath,
   avatar: withPublicPath(global.avatar),
+  avatar_webp: withPublicPath(global.avatar_webp),
   cvFile: withPublicPath(global.cvFile),
 };
 
@@ -77,7 +78,7 @@ const indexViewData = {
     path: page.getPath(),
     name: page.getName(),
     subtitle: page.getSubtitle(),
-    thumbnail: page.getThumbnail(),
+    thumbnails: page.getThumbnails(),
   })),
   cacheBuster: new Date().getTime(),
   ...getOgTags()

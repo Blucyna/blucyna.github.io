@@ -1,6 +1,7 @@
 module.exports = {
   url: 'https://blucy.pl',
   avatar: 'img/avatar.jpg',
+  avatar_webp: 'img/avatar.webp',
   name: 'Lucyna Bugara',
   subtitle: 'UX / UI designer',
   description: 'I started my career in IT as Project Manager. In time I realised that the most exciting part of the project for me is creative planning of UX/UI and Web Design. I\'ve always had multiple visions and ideas instantly while looking at the brief and tried to focus on what is going on in users head, how I can help him. I decided that my imagination is way to big to not start challenge it into the design :) ',

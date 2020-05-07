@@ -18,7 +18,6 @@ class DetailPage extends Page {
 
   buildPage(data) {
     this
-      .setThumbnail(`${this.getPublicPath()}/${data.thumbnail}`)
       .setDescription(data.description)
       .setSubtitle(data.subtitle)
       .addStyle(`${this.getPublicPath()}/css/detail.css`)

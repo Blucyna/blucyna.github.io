@@ -10,7 +10,6 @@ class Page {
 
     this.data = data;
 
-    this.thumbNail = `${this.getPublicPath()}/${data.thumbnail}`;
     this.subtitle =data.subtitle;
 
     this.metaData = {
@@ -19,6 +18,11 @@ class Page {
       description: '',
       image: '',
     }
+
+    this.setThumbnails(
+      data.thumbnails
+        .map(thumbnail => `${this.getPublicPath()}/${thumbnail}`)
+    );
 
     this.components = [];
 
@@ -54,10 +58,13 @@ class Page {
     return this;
   }
 
-  setThumbnail(path) {
-    this.thumbNail = path;
+  setThumbnails(thumbnails) {
+    this.thumbNails = thumbnails.map((thumbnail => ({
+      src: thumbnail,
+      type: thumbnail.includes('webp') ? 'image/webp' : 'image/jpeg',
+    })));
 
-    this.metaData.image = path;
+    this.metaData.image = thumbnails[thumbnails.length-1];
 
     return this;
   }
@@ -102,8 +109,8 @@ class Page {
     return this.globalConfig.publicPath;
   }
 
-  getThumbnail() {
-    return this.thumbNail
+  getThumbnails() {
+    return this.thumbNails
   }
 
   getPath() {

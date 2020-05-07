@@ -26,7 +26,12 @@
                             <div class="project-subtitle">{{item.subtitle}}</div>
                         </div>
                         <div class="image-container">
-                            <img src="{{item.thumbnail}}" alt="{{item.name}}">
+                            <picture>
+                                {% for thumbnail in item.thumbnails %}
+                                    <source type="{{thumbnail.type}}" srcset="{{thumbnail.src}}">
+                                {% endfor %}
+                                <img src="{{(item.thumbnails | last).src}}" alt="{{item.name}}">
+                            </picture>
                         </div>
                     </div>
                 </a>

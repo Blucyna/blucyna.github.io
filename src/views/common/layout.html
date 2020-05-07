@@ -137,7 +137,11 @@
                                 <div class="fake-cut"></div>
                                 <div class="fake-cut-line"></div>
                                 <div class="profile-cover profile-picture">
-                                    <img src="{{config.avatar}}" alt="Lucyna's photo">
+                                    <picture>
+                                        <source type="image/webp" srcset="{{config.avatar_webp}}">
+                                        <source type="image/jpeg" srcset="{{config.avatar}}">
+                                        <img src="{{config.avatar}}" alt="Lucyna's photo">
+                                    </picture>
                                 </div>
                                 <div class="profile-short-cv">
                                     <div class="profile-about">
