@@ -49,8 +49,54 @@ function scrollEvent() {
   }
 }
 
+function initImagesLazyLoad(event) {
+  var lazyImages =[].slice.call(
+    document.querySelectorAll(".lazy img")
+  )
+
+  if ("IntersectionObserver" in window) {
+    var lazyImageObserver =
+      new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            var picture = entry.target;
+            var pictureChildrens = [].slice.call(picture.parentElement.children);
+
+            pictureChildrens.forEach(function(child) {
+              var isImg = child.localName === 'img';
+
+              if(isImg) {
+                child.src = child.dataset.src;
+              }
+              else {
+                child.srcset = child.dataset.srcset;
+              }
+            });
+
+            window.p = picture;
+
+            picture.closest('.lazy-placeholder').classList.remove('lazy-placeholder')
+
+            picture.classList.remove("lazy");
+            lazyImageObserver.unobserve(picture);
+          }
+        });
+      });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage);
+    });
+  } else {
+    lazyImages.forEach(function(image){
+      image.nextElementSibling.src = image.nextElementSibling.dataset.srcset;
+    });
+  }
+}
+
 function init() {
   document.addEventListener('scroll', scrollEvent);
+
+  initImagesLazyLoad();
 }
 
 (function() {
