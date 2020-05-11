@@ -2,10 +2,13 @@ module.exports = [
   {
     name: 'Maynooth Furniture',
     description: 'This project of online shop includes the prototype and mockup. The persona I focused on is Mandy - 40 year old business woman who wants to redecorate her apartament and is looking for some inspiration in furniture.',
-    thumbnails: [
-      'img/shop/shop-mini.webp',
-      'img/shop/shop-mini.jpg',
-    ],
+    thumbnails: {
+      images: [
+        'img/shop/shop-mini.webp',
+        'img/shop/shop-mini.jpg',
+      ],
+      placeholder: 'img/shop/shop-mini-placeholder.jpg',
+    },
     cover: 'img/shop/shop-cover.jpg',
     subtitle: 'Online Shop Concept',
     persona: 'The person I had in mind is Mandy - a 40 year old woman who is a manager in small town restaurant. She is looking for some new furniture because her apartment needs redecoration. Mandy prefers shopping online however she does not do this often and is looking for a website where she can find everything in one place.',
@@ -68,10 +71,14 @@ module.exports = [
   {
     name: 'HBO Go',
     description: 'This project of online shop includes the prototype and mockup. The persona I focused on is Mandy - 40 year old business woman who wants to redecorate her apartament and is looking for some inspiration in furniture.',
-    thumbnails: [
-      'img/hbo/thumbnail.webp',
-      'img/hbo/thumbnail.jpg',
-    ],
+    thumbnails: {
+      images:[
+        'img/hbo/thumbnail.webp',
+        'img/hbo/thumbnail.jpg',
+      ],
+      placeholder: 'img/hbo/thumbnail-placeholder.jpg'
+    },
+
     cover: 'img/hbo/cover.jpg',
     subtitle: 'Redesign Concept',
     coverTextColor: '#fff',

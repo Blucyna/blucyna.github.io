@@ -25,12 +25,12 @@
                             <div class="project-title">{{item.name}}</div>
                             <div class="project-subtitle">{{item.subtitle}}</div>
                         </div>
-                        <div class="image-container lazy-placeholder">
+                        <div class="image-container lazy-placeholder lazy">
                             <picture class="lazy">
-                                {% for thumbnail in item.thumbnails %}
+                                {% for thumbnail in item.thumbnails.images %}
                                     <source type="{{thumbnail.type}}" data-srcset="{{thumbnail.src}}">
                                 {% endfor %}
-                                <img data-src="{{(item.thumbnails | last).src}}" alt="{{item.name}}">
+                                <img class="img-small" data-src="{{(item.thumbnails.images | last).src}}" src="{{item.thumbnails.placeholder}}" alt="{{item.name}}">
                             </picture>
                         </div>
                     </div>

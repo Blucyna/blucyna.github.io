@@ -67,13 +67,12 @@ function initImagesLazyLoad(event) {
 
               if(isImg) {
                 child.src = child.dataset.src;
+                child.classList.remove('img-small');
               }
               else {
                 child.srcset = child.dataset.srcset;
               }
             });
-
-            window.p = picture;
 
             picture.closest('.lazy-placeholder').classList.remove('lazy-placeholder')
 

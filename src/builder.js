@@ -28,12 +28,12 @@ const getOgTags = (
   title= globalConfig.meta.title,
   url= globalConfig.url,
   description= globalConfig.description,
-  image=globalConfig.avatar,
+  image= globalConfig.avatar,
 ) => ({
   og: {
     title,
     url,
-    description,
+    description: description.replace(/<strong>/g, '').replace(/<\/strong/g, ''),
     image: `${globalConfig.url}/${image}`
   }
 });

@@ -19,9 +19,11 @@ class Page {
       image: '',
     }
 
-    this.setThumbnails(
-      data.thumbnails
-        .map(thumbnail => `${this.getPublicPath()}/${thumbnail}`)
+    this.setThumbnails({
+      images: data.thumbnails.images.map(thumbnail => `${this.getPublicPath()}/${thumbnail}`),
+      placeholder: `${this.getPublicPath()}/${data.thumbnails.placeholder}`
+    }
+
     );
 
     this.components = [];
@@ -59,12 +61,15 @@ class Page {
   }
 
   setThumbnails(thumbnails) {
-    this.thumbNails = thumbnails.map((thumbnail => ({
-      src: thumbnail,
-      type: thumbnail.includes('webp') ? 'image/webp' : 'image/jpeg',
-    })));
+    this.thumbNails = {
+      images: thumbnails.images.map((thumbnail => ({
+        src: thumbnail,
+        type: thumbnail.includes('webp') ? 'image/webp' : 'image/jpeg',
+      }))),
+      placeholder: thumbnails.placeholder,
+    };
 
-    this.metaData.image = thumbnails[thumbnails.length-1];
+    this.metaData.image = thumbnails.images[thumbnails.images.length-1];
 
     return this;
   }
