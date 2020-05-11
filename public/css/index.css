@@ -192,3 +192,17 @@ and (-webkit-min-device-pixel-ratio:2) {
 .fa-user-o:before{content:"\f2c0"}
 .fa-s15:before{content:"\f2cd"}
 
+.img-small {
+    filter: blur(50px);
+    /* this is needed so Safari keeps sharp edges */
+    transform: scale(1);
+}
+
+.image-container.lazy img{
+    transition: opacity 1s linear;
+    opacity: 1;
+}
+
+.image-container.lazy img.img-small{
+    opacity: 0;
+}
