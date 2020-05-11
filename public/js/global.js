@@ -42,7 +42,7 @@ function scrollEvent() {
     fbq('trackCustom', 'scrollDepthPercent', {path: window.siteConfig.path, depth: `${quarter * 25} - ${(quarter+1) * 25}`});
   }
 
-  if(!window.scrollEventSend && window.pageYOffset > 3000) {
+  if(!window.scrollEventSend && percent > 50) {
     window.scrollEventSend = true;
 
     fbq('track', 'ViewContent', {content_type: window.siteConfig.path});
