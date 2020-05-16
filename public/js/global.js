@@ -51,12 +51,11 @@ function scrollEvent() {
 
 function initImagesLazyLoad(event) {
   var lazyImages =[].slice.call(
-    document.querySelectorAll(".lazy img")
-  )
+    document.querySelectorAll("picture.lazy img")
+  );
 
   if ("IntersectionObserver" in window) {
-    var lazyImageObserver =
-      new IntersectionObserver(function(entries, observer) {
+    var lazyImageObserver = new IntersectionObserver(function(entries, observer) {
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
             var picture = entry.target;
@@ -74,7 +73,9 @@ function initImagesLazyLoad(event) {
               }
             });
 
-            picture.closest('.lazy-placeholder').classList.remove('lazy-placeholder')
+            var closestLazyPlaceholder = picture.closest('.lazy-placeholder');
+
+            closestLazyPlaceholder && closestLazyPlaceholder.classList.remove('lazy-placeholder')
 
             picture.classList.remove("lazy");
             lazyImageObserver.unobserve(picture);
