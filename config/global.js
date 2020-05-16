@@ -13,7 +13,7 @@ module.exports = {
   ],
   meta: {
     title: 'blucy.pl - Lucyna Bugara UX / UI & Web designer',
-    keywords: 'portfolio, ux, ui, webdesign, design, graphic',
+    keywords: 'graphic, web design, ux, web designer, webdesigner, portfolio, web, design, designer, freelance, freelancer, graphic, www, strony, projektowanie, projektant, grafik, grafika, komputerowa, witryn, site, ux, ui, usability, użyteczność, accesability, dostępność, web writing, ux designer, product designer, strony internetowe, internet, aplikacje mobilne, aplikacje,',
     description: 'Lucyna Bugara - UX / UI & Web designer, need a design? contact me'
   },
   contact: {
