@@ -4,7 +4,14 @@
         <div class="ufo-mockup--display">
             <div class="ufo-mockup--screen">
                 <div class="ufo-mockup--scroller ps">
-                    <div class="image">
+                    <div class="image lazy-placeholder lazy">
+                        <picture class="lazy">
+                            {% for image in data.images %}
+                            <source type="{{image.type}}" data-srcset="{{image.src}}">
+                            {% endfor %}
+
+                            <img class="img-small" data-src="{{(data.images | last).src}}" src="{{data.placeholder}}" alt="{{data.title}}">
+                        </picture>
                         <img src="{{data.src}}" alt="Mobile screenshot of {{data.title}}">
                     </div>
                     <div class="ps__rail-x" style="left: 0px; bottom: 2px;">

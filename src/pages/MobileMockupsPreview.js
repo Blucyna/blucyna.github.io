@@ -32,9 +32,9 @@ class MobileMockupsPreview extends Page {
         new components.SectionComponent(
           data.mobileImages.map(image =>
             new components.MobileImageComponent(
-              `${this.getPublicPath()}/${image}`,
-              image,
-              'Mobile screenshot of Moynooth Furniture'
+              image.sources.map(src => `${this.getPublicPath()}/${src}`),
+              image.title,
+              `${this.getPublicPath()}/${image.placeholder}`
             )
           )
         )

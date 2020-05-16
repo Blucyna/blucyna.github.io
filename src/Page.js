@@ -22,9 +22,7 @@ class Page {
     this.setThumbnails({
       images: data.thumbnails.images.map(thumbnail => `${this.getPublicPath()}/${thumbnail}`),
       placeholder: `${this.getPublicPath()}/${data.thumbnails.placeholder}`
-    }
-
-    );
+    });
 
     this.components = [];
 

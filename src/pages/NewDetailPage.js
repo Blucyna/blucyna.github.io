@@ -49,8 +49,9 @@ class DetailPage extends Page {
       .addComponent(
         new components.TwoColumnsComponent(
           new components.MobileImageComponent(
-            `${this.getPublicPath()}/${data.mobileFlow}`,
-            'Mobile application flow'
+            data.mobileFlow.images.map(src => `${this.getPublicPath()}/${src}`),
+            data.mobileFlow.title,
+            `${this.getPublicPath()}/${data.mobileFlow.placeholder}`
           ),
           new components.DivComponent('text-container', [
             new components.DivComponent('text', [
@@ -70,15 +71,17 @@ class DetailPage extends Page {
             ])
           ]),
           new components.ImageComponent(
-            `${this.getPublicPath()}/${data.desktopFlow}`,
-            'Mobile application flow'
+            data.desktopFlow.images.map(src => `${this.getPublicPath()}/${src}`),
+            data.desktopFlow.title,
+            `${this.getPublicPath()}/${data.desktopFlow.placeholder}`
           )
         )
       )
       .addComponent(
           new components.FullImageComponent(
-            `${this.getPublicPath()}/${data.mobileShowcase}`,
-            'Showcase'
+            data.mobileShowcase.images.map(src => `${this.getPublicPath()}/${src}`),
+            data.mobileShowcase.title,
+            `${this.getPublicPath()}/${data.mobileShowcase.placeholder}`,
           )
       )
       .addComponent(

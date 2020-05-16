@@ -3,8 +3,14 @@
     <div class="ufo--p-container-fluid">
         <div class="media-container image-container--fluid display-mode--default  " style=" ">
             <div class="media-box  ">
-                <div class="image">
-                    <img src="{{data.src}}" alt="{{data.title}}">
+                <div class="image lazy-placeholder lazy">
+                    <picture class="lazy">
+                        {% for image in data.images %}
+                            <source type="{{image.type}}" data-srcset="{{image.src}}">
+                        {% endfor %}
+
+                        <img class="img-small" data-src="{{(data.images | last).src}}" src="{{data.placeholder}}" alt="{{data.title}}">
+                    </picture>
                 </div>
             </div>
         </div>

@@ -30,8 +30,9 @@ class DesktopMockupsPreview extends Page {
       )
       .addComponents(
         data.images.map(image => new components.FullImageComponent(
-          `${this.getPublicPath()}/${image}`,
-          'Screenshot of Moynooth Furniture'
+          image.sources.map(src => `${this.getPublicPath()}/${src}`),
+          image.title,
+          `${this.getPublicPath()}/${image.placeholder}`
         ))
       )
   }
