@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "gh-pages": "^2.1.1",
-    "nunjucks": "^3.2.1"
+    "nunjucks": "^3.2.1",
+    "jimp": "^0.11.0",
+    "core-js": "^3.6.5"
   },
   "scripts": {
     "build": "rm -rf build && mkdir build && cp CNAME build && cp -r src/public build && node src/builder.js",

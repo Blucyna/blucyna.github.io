@@ -26,7 +26,7 @@ module.exports = [
     mobileShowcase: {
       images: ['img/shop/iPhone-showcase.jpg'],
       title: 'Showcase',
-      placeholder: 'img/shop/iPhone-showcase.jpg',
+      placeholder: 'img/shop/iPhone-showcase-placeholder.jpg',
     },
     projectDescription: 'The main task was to place content that would be rich in details but not too overwhelming because I did not want to irritate the customer. The main principles I mainly suggested on were:',
     projectDescriptionBulletPoints: [
@@ -53,119 +53,119 @@ module.exports = [
       {
         sources: ['img/shop/mockups/Bedroom-Mockup.png'],
         title: 'Screenshot of Moynooth Furniture',
-        placeholder: 'img/shop/mockups/Bedroom-Mockup.png',
+        placeholder: 'img/shop/mockups/Bedroom-Mockup-placeholder.png',
       },
       {
         sources: ['img/shop/mockups/Bucket–Mockup.png'],
         title: 'Screenshot of Moynooth Furniture',
-        placeholder: 'img/shop/mockups/Bucket–Mockup.png',
+        placeholder: 'img/shop/mockups/Bucket–Mockup-placeholder.png',
       },
       {
         sources: ['img/shop/mockups/Clearence-deals–Mockup.png'],
         title: 'Screenshot of Moynooth Furniture',
-        placeholder: 'img/shop/mockups/Clearence-deals–Mockup.png',
+        placeholder: 'img/shop/mockups/Clearence-deals–Mockup-placeholder.png',
       },
       {
         sources: ['img/shop/mockups/Contact-Page–Mockup.png'],
         title: 'Screenshot of Moynooth Furniture',
-        placeholder: 'img/shop/mockups/Contact-Page–Mockup.png',
+        placeholder: 'img/shop/mockups/Contact-Page–Mockup-placeholder.png',
       },
       {
         sources: ['img/shop/mockups/Home-Page-1336–Mockup.png'],
         title: 'Screenshot of Moynooth Furniture',
-        placeholder: 'img/shop/mockups/Home-Page-1336–Mockup.png',
+        placeholder: 'img/shop/mockups/Home-Page-1336–Mockup-placeholder.png',
       },
       {
         sources: ['img/shop/mockups/Inspiration-ideas–Mockup.png'],
         title: 'Screenshot of Moynooth Furniture',
-        placeholder: 'img/shop/mockups/Inspiration-ideas–Mockup.png',
+        placeholder: 'img/shop/mockups/Inspiration-ideas–Mockup-placeholder.png',
       },
       {
         sources: ['img/shop/mockups/Kitchen-Dining-Mockup.png'],
         title: 'Screenshot of Moynooth Furniture',
-        placeholder: 'img/shop/mockups/Kitchen-Dining-Mockup.png',
+        placeholder: 'img/shop/mockups/Kitchen-Dining-Mockup-placeholder.png',
       },
       {
         sources: ['img/shop/mockups/Living-Room–Mockup.png'],
         title: 'Screenshot of Moynooth Furniture',
-        placeholder: 'img/shop/mockups/Living-Room–Mockup.png',
+        placeholder: 'img/shop/mockups/Living-Room–Mockup-placeholder.png',
       },
       {
         sources: ['img/shop/mockups/Login-Registration–Mockup.png'],
         title: 'Screenshot of Moynooth Furniture',
-        placeholder: 'img/shop/mockups/Login-Registration–Mockup.png',
+        placeholder: 'img/shop/mockups/Login-Registration–Mockup-placeholder.png',
       },
       {
         sources: ['img/shop/mockups/New-in-store–Mockup.png'],
         title: 'Screenshot of Moynooth Furniture',
-        placeholder: 'img/shop/mockups/New-in-store–Mockup.png',
+        placeholder: 'img/shop/mockups/New-in-store–Mockup-placeholder.png',
       },
       {
         sources: ['img/shop/mockups/Other-Mockup.png'],
         title: 'Screenshot of Moynooth Furniture',
-        placeholder: 'img/shop/mockups/Other-Mockup.png',
+        placeholder: 'img/shop/mockups/Other-Mockup-placeholder.png',
       },
       {
         sources: ['img/shop/mockups/Payment–Mockup.png'],
         title: 'Screenshot of Moynooth Furniture',
-        placeholder: 'img/shop/mockups/Payment–Mockup.png',
+        placeholder: 'img/shop/mockups/Payment–Mockup-placeholder.png',
       },
       {
         sources: ['img/shop/mockups/Product-Page-Bedroom.png'],
         title: 'Screenshot of Moynooth Furniture',
-        placeholder: 'img/shop/mockups/Product-Page-Bedroom.png',
+        placeholder: 'img/shop/mockups/Product-Page-Bedroom-placeholder.png',
       },
       {
         sources: ['img/shop/mockups/Product-Page-Kitchen-Dining-Mockup.png'],
         title: 'Screenshot of Moynooth Furniture',
-        placeholder: 'img/shop/mockups/Product-Page-Kitchen-Dining-Mockup.png',
+        placeholder: 'img/shop/mockups/Product-Page-Kitchen-Dining-Mockup-placeholder.png',
       },
       {
         sources: ['img/shop/mockups/Product-Page-Living-Room–Mockup.png'],
         title: 'Screenshot of Moynooth Furniture',
-        placeholder: 'img/shop/mockups/Product-Page-Living-Room–Mockup.png',
+        placeholder: 'img/shop/mockups/Product-Page-Living-Room–Mockup-placeholder.png',
       },
       {
         sources: ['img/shop/mockups/Product-Page-Living-Room–Mockup–1.png'],
         title: 'Screenshot of Moynooth Furniture',
-        placeholder: 'img/shop/mockups/Product-Page-Living-Room–Mockup–1.png',
+        placeholder: 'img/shop/mockups/Product-Page-Living-Room–Mockup–1-placeholder.png',
       },
     ],
     mobileImages: [
       {
         sources: ['img/shop/mobile/iPhoneX-XS-11Pro–Introduction1–2.png'],
         title: 'Mobile screenshot of Moynooth Furniture',
-        placeholder: 'img/shop/mobile/iPhoneX-XS-11Pro–Introduction1–2.png'
+        placeholder: 'img/shop/mobile/iPhoneX-XS-11Pro–Introduction1–2-placeholder.png'
       },
       {
         sources: ['img/shop/mobile/iPhoneX-XS-11Pro–Introduction2–1.png'],
         title: 'Mobile screenshot of Moynooth Furniture',
-        placeholder: 'img/shop/mobile/iPhoneX-XS-11Pro–Introduction2–1.png'
+        placeholder: 'img/shop/mobile/iPhoneX-XS-11Pro–Introduction2–1-placeholder.png'
       },
       {
         sources: ['img/shop/mobile/iPhoneX-XS-11Pro–Dashboard–1.png'],
         title: 'Mobile screenshot of Moynooth Furniture',
-        placeholder: 'img/shop/mobile/iPhoneX-XS-11Pro–Dashboard–1.png'
+        placeholder: 'img/shop/mobile/iPhoneX-XS-11Pro–Dashboard–1-placeholder.png'
       },
       {
         sources: ['img/shop/mobile/iPhoneX-XS-11Pro–Dashboard–Inspiration2–7.png'],
         title: 'Mobile screenshot of Moynooth Furniture',
-        placeholder: 'img/shop/mobile/iPhoneX-XS-11Pro–Dashboard–Inspiration2–7.png'
+        placeholder: 'img/shop/mobile/iPhoneX-XS-11Pro–Dashboard–Inspiration2–7-placeholder.png'
       },
       {
         sources: ['img/shop/mobile/iPhoneX-XS-11Pro–Login–1.png'],
         title: 'Mobile screenshot of Moynooth Furniture',
-        placeholder: 'img/shop/mobile/iPhoneX-XS-11Pro–Login–1.png'
+        placeholder: 'img/shop/mobile/iPhoneX-XS-11Pro–Login–1-placeholder.png'
       },
       {
         sources: ['img/shop/mobile/iPhoneX-XS-11Pro–Sign-up–1.png'],
         title: 'Mobile screenshot of Moynooth Furniture',
-        placeholder: 'img/shop/mobile/iPhoneX-XS-11Pro–Sign-up–1.png'
+        placeholder: 'img/shop/mobile/iPhoneX-XS-11Pro–Sign-up–1-placeholder.png'
       },
       {
         sources: ['img/shop/mobile/iPhoneX-XS-11Pro-Screen.png'],
         title: 'Mobile screenshot of Moynooth Furniture',
-        placeholder: 'img/shop/mobile/iPhoneX-XS-11Pro-Screen.png'
+        placeholder: 'img/shop/mobile/iPhoneX-XS-11Pro-Screen-placeholder.png'
       },
     ],
     livePreviews: [
@@ -201,7 +201,7 @@ module.exports = [
     mobileShowcase: {
       images: ['img/hbo/mindmap.png'],
       title: 'Mind map',
-      placeholder: 'img/hbo/mindmap.png',
+      placeholder: 'img/hbo/mindmap-placeholder.png',
     },
     projectDescription: 'Over redesigning and UX tests I realised that thumbnails of movies and series can be very colourful and distractive, that is why the background and overall visual should be kept simple and clear. After testers feedback I tried to simplify the website as much as possible. A few of testers made me realise that the same movie being seen in different categories can be really confusing.',
     projectDescriptionBulletPoints: null,
@@ -223,64 +223,64 @@ module.exports = [
       {
         sources: ['img/hbo/mockups/Home_Page_1336.png'],
         title: 'Screenshot of HBO GO',
-        placeholder: 'img/hbo/mockups/Home_Page_1336.png'
+        placeholder: 'img/hbo/mockups/Home_Page_1336-placeholder.png'
       },
       {
         sources: ['img/hbo/mockups/Movies_Category.png'],
         title: 'Screenshot of HBO GO',
-        placeholder: 'img/hbo/mockups/Movies_Category.png'
+        placeholder: 'img/hbo/mockups/Movies_Category-placeholder.png'
       },
       {
         sources: ['img/hbo/mockups/Movies_Category_2.png'],
         title: 'Screenshot of HBO GO',
-        placeholder: 'img/hbo/mockups/Movies_Category_2.png'
+        placeholder: 'img/hbo/mockups/Movies_Category_2-placeholder.png'
       },
       {
         sources: ['img/hbo/mockups/Movies_Category_3.png'],
         title: 'Screenshot of HBO GO',
-        placeholder: 'img/hbo/mockups/Movies_Category_3.png'
+        placeholder: 'img/hbo/mockups/Movies_Category_3-placeholder.png'
       },
       {
         sources: ['img/hbo/mockups/Movies_Popup.png'],
         title: 'Screenshot of HBO GO',
-        placeholder: 'img/hbo/mockups/Movies_Popup.png'
+        placeholder: 'img/hbo/mockups/Movies_Popup-placeholder.png'
       },
       {
         sources: ['img/hbo/mockups/Movie_window_Desktop.png'],
         title: 'Screenshot of HBO GO',
-        placeholder: 'img/hbo/mockups/Movie_window_Desktop.png'
+        placeholder: 'img/hbo/mockups/Movie_window_Desktop-placeholder.png'
       },
       {
         sources: ['img/hbo/mockups/Login.png'],
         title: 'Screenshot of HBO GO',
-        placeholder: 'img/hbo/mockups/Login.png'
+        placeholder: 'img/hbo/mockups/Login-placeholder.png'
       },
       {
         sources: ['img/hbo/mockups/Signup.png'],
         title: 'Screenshot of HBO GO',
-        placeholder: 'img/hbo/mockups/Signup.png'
+        placeholder: 'img/hbo/mockups/Signup-placeholder.png'
       },
     ],
     mobileImages: [
       {
         sources: ['img/hbo/mobile/Home_Page1.png'],
         title: 'Mobile screenshot of HBO GO',
-        placeholder: 'img/hbo/mobile/Home_Page1.png'
+        placeholder: 'img/hbo/mobile/Home_Page1-placeholder.png'
       },
       {
         sources: ['img/hbo/mobile/Home_Page2.png'],
         title: 'Mobile screenshot of HBO GO',
-        placeholder: 'img/hbo/mobile/Home_Page2.png'
+        placeholder: 'img/hbo/mobile/Home_Page2-placeholder.png'
       },
       {
         sources: ['img/hbo/mobile/Home_Page3.png'],
         title: 'Mobile screenshot of HBO GO',
-        placeholder: 'img/hbo/mobile/Home_Page3.png'
+        placeholder: 'img/hbo/mobile/Home_Page3-placeholder.png'
       },
       {
         sources: ['img/hbo/mobile/Home_Page4.png'],
         title: 'Mobile screenshot of HBO GO',
-        placeholder: 'img/hbo/mobile/Home_Page4.png'
+        placeholder: 'img/hbo/mobile/Home_Page4-placeholder.png'
       },
     ],
     livePreviews: [
