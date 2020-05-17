@@ -9,7 +9,7 @@ module.exports = [
       ],
       placeholder: 'img/shop/shop-mini-placeholder.jpg',
     },
-    cover: 'img/shop/shop-cover.jpg',
+    cover: 'img/shop/shop-cover-r.jpg',
     subtitle: 'Online Shop Concept',
     persona: 'The person I had in mind is Mandy - a 40 year old woman who is a manager in small town restaurant. She is looking for some new furniture because her apartment needs redecoration. Mandy prefers shopping online however she does not do this often and is looking for a website where she can find everything in one place.',
     goal: 'The goal was to create an online shop with a variety of products which can be easily searched and purchased.',
