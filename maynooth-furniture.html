@@ -45,11 +45,11 @@
     
 
     
-        <script src="public/js/detail.js?cache=1589733822219"  defer></script>
+        <script src="public/js/detail.js?cache=1589992554029"  defer></script>
     
 
     
-        <link rel="preload" href="public/css/detail.css?cache=1589733822219" as="style" onload="this.rel='stylesheet'">
+        <link rel="preload" href="public/css/detail.css?cache=1589992554029" as="style" onload="this.rel='stylesheet'">
     
 
     <style>
@@ -199,22 +199,22 @@
 <!--      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');-->
 <!--    </script>-->
 
-    <!-- Facebook Pixel Code -->
-<!--    <script>-->
-<!--      !function(f,b,e,v,n,t,s)-->
-<!--      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?-->
-<!--        n.callMethod.apply(n,arguments):n.queue.push(arguments)};-->
-<!--        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';-->
-<!--        n.queue=[];t=b.createElement(e);t.async=!0;-->
-<!--        t.src=v;s=b.getElementsByTagName(e)[0];-->
-<!--        s.parentNode.insertBefore(t,s)}(window, document,'script',-->
-<!--        'https://connect.facebook.net/en_US/fbevents.js');-->
-<!--      fbq('init', '226201375371569');-->
-<!--      fbq('track', 'PageView');-->
-<!--    </script>-->
-<!--    <noscript><img height="1" width="1" style="display:none"-->
-<!--                   src="https://www.facebook.com/tr?id=226201375371569&ev=PageView&noscript=1"-->
-<!--    /></noscript>-->
+     Facebook Pixel Code
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '226201375371569');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id=226201375371569&ev=PageView&noscript=1"
+    /></noscript>
     <!-- End Facebook Pixel Code -->
 
     <script>
@@ -223,7 +223,7 @@
         }
     </script>
 
-    <script src="public/js/global.js?cache=1589733822219" defer></script>
+    <script src="public/js/global.js?cache=1589992554029" defer></script>
 
     <style>
         .profile-page.profile_theme_default .profile-info,
@@ -292,9 +292,15 @@
             </div>
         </div>
         <div class="ufo--p-container-fluid">
-            <div class="image-container image-container--fluid">
+            <div class="image-container image-container--fluid lazy-placeholder lazy">
                 <div class="main-grad"></div>
-                <img src="public/img/shop/shop-cover-r.jpg" alt="">
+                <picture class="lazy">
+                    
+                        <source type="image/jpeg" data-srcset="public/img/shop/shop-cover-r.jpg">
+                    
+
+                    <img class="img-small" data-src="public/img/shop/shop-cover-r.jpg" src="public/img/shop/shop-cover-r-placeholder.jpg" alt="Maynooth Furniture">
+                </picture>
             </div>
 
             <div class="text-wrapper">
