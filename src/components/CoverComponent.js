@@ -1,10 +1,16 @@
 const Component = require('./Component');
 
 class CoverComponent extends Component{
-  constructor(path, name, subtitle, coverTextColor, parentSite) {
+  constructor(imageData, name, subtitle, coverTextColor, parentSite) {
     super('cover');
 
-    this.data.path = path;
+    this.data.imageData = {
+      placeholder: imageData.placeholder,
+      images: imageData.images.map((src => ({
+        src: src,
+        type: src.includes('webp') ? 'image/webp' : 'image/jpeg',
+      })))
+    };
     this.data.name = name;
     this.data.subtitle = subtitle;
     this.data.parentSite = parentSite;

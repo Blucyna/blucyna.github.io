@@ -4,6 +4,7 @@ const jimp = require('jimp');
 const { content } = require('../config');
 
 const FIELDS = [
+  'cover',
   'thumbnails',
   'mobileFlow',
   'desktopFlow',
@@ -47,7 +48,7 @@ const toResize = images
       .then(image => image.writeAsync(newName))
   });
 
-console.log('Images to resize: ', images.length);
+console.log('Images to resize: ', toResize.length);
 
 Promise.all(toResize).then(() => {
   console.log('images resized')

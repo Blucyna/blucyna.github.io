@@ -16,7 +16,10 @@ class DesktopMockupsPreview extends Page {
       .addScript(`${this.getPublicPath()}/js/detail.js`, false, true)
       .addComponent(
         new components.CoverComponent(
-          `${this.getPublicPath()}/${data.cover}`,
+          {
+            images: data.cover.images.map(src => `${this.getPublicPath()}/${src}`),
+            placeholder: `${this.getPublicPath()}/${data.cover.placeholder}`
+          },
           data.name,
           data.subtitle,
           data.coverTextColor,

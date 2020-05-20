@@ -9,7 +9,11 @@ module.exports = [
       ],
       placeholder: 'img/shop/shop-mini-placeholder.jpg',
     },
-    cover: 'img/shop/shop-cover-r.jpg',
+    cover: {
+      images: ['img/shop/shop-cover-r.jpg'],
+      title: 'Mobile application flow',
+      placeholder: 'img/shop/shop-cover-r-placeholder.jpg',
+    },
     subtitle: 'Online Shop Concept',
     persona: 'The person I had in mind is Mandy - a 40 year old woman who is a manager in small town restaurant. She is looking for some new furniture because her apartment needs redecoration. Mandy prefers shopping online however she does not do this often and is looking for a website where she can find everything in one place.',
     goal: 'The goal was to create an online shop with a variety of products which can be easily searched and purchased.',
@@ -183,7 +187,11 @@ module.exports = [
       placeholder: 'img/hbo/thumbnail-placeholder.jpg'
     },
 
-    cover: 'img/hbo/cover.jpg',
+    cover: {
+      images: ['img/hbo/cover.jpg'],
+      title: 'Mobile application flow',
+      placeholder: 'img/hbo/cover-placeholder.jpg',
+    },
     subtitle: 'Redesign Concept',
     coverTextColor: '#fff',
     persona: 'I have been using HBO Go for a while now and there were several issues I had to face. I once said that if I had any experience I would redesign it myself. Main issue I wanted to ‚fix’ was overcrowded view - in first few seconds I spend in the service I am already disoriented as there are many elements shouting at me at once. Many movies listed in too many various categories, images in the background, a lot of copy. I have no idea what to focus my sight on.',

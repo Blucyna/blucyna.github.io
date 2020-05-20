@@ -12,9 +12,15 @@
             </div>
         </div>
         <div class="ufo--p-container-fluid">
-            <div class="image-container image-container--fluid">
+            <div class="image-container image-container--fluid lazy-placeholder lazy">
                 <div class="main-grad"></div>
-                <img src="{{data.path}}" alt="">
+                <picture class="lazy">
+                    {% for image in data.imageData.images %}
+                        <source type="{{image.type}}" data-srcset="{{image.src}}">
+                    {% endfor %}
+
+                    <img class="img-small" data-src="{{(data.imageData.images | last).src}}" src="{{data.imageData.placeholder}}" alt="{{data.name}}">
+                </picture>
             </div>
 
             <div class="text-wrapper">
